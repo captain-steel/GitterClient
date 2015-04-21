@@ -18,26 +18,6 @@ namespace GitterClient
     public sealed partial class MainPage
     {
         /// <summary>
-        /// The redirect url.
-        /// </summary>
-        private const string RedirectUrl = "http://www.wassimazirar.com";
-
-        /// <summary>
-        /// The oauth key.
-        /// </summary>
-        private const string OauthKey = "b9b36352177ed6b203e75958eb627672d12a6c10";
-
-        /// <summary>
-        /// The oauth secret.
-        /// </summary>
-        private const string OauthSecret = "75f3c739cd011d1b2a218fe04f615adb62a19f49";
-
-        /// <summary>
-        /// The auth endpoint.
-        /// </summary>
-        private readonly Uri _authEndpoint = new Uri("https://gitter.im/login/oauth/authorize");
-
-        /// <summary>
         /// Gets or sets the current.
         /// </summary>
         public static MainPage Current { get; set; }

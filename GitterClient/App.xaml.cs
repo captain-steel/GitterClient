@@ -135,7 +135,7 @@
         /// <param name="e">Details about the launch request and process.</param>
         protected async override void OnLaunched(LaunchActivatedEventArgs e)
         {
-            Frame rootFrame = CreateRootFrame();
+            var rootFrame = CreateRootFrame();
             await RestoreStatusAsync(e.PreviousExecutionState);
 
             // MainPage is always in rootFrame so we don't have to worry about restoring the navigation state on resume

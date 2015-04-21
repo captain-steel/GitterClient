@@ -133,9 +133,9 @@
         }
 
         /// <summary>
-        /// Unique identifier for this particular continuation. Most useful for components that 
-        /// retrieve the continuation data via <see cref="GetContinuationArgs"/> and need
-        /// to perform their own replay check
+        /// Gets a unique identifier for this particular continuation. 
+        /// Most useful for components that retrieve the continuation data via <see cref="GetContinuationArgs"/> 
+        /// and need to perform their own replay check
         /// </summary>
         public Guid Id
         {

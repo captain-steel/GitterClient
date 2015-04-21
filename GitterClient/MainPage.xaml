@@ -4,6 +4,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+      DataContext="{Binding Path=MainViewModel, Source={StaticResource Locator}}"
       mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -11,13 +12,7 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
+        
         <Frame x:Name="ScenarioFrame" Grid.Row="0" Margin="0,25,0,0" />
-        <Border x:Name="StatusBorder" Grid.Row="1" Visibility="Collapsed">
-            <TextBlock x:Name="StatusBlock"
-                       Margin="12, 10, 12, 10"
-                       FontWeight="Bold"
-                       Foreground="White"
-                       TextWrapping="Wrap" />
-        </Border>
     </Grid>
 </Page>

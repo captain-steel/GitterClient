@@ -1,8 +1,10 @@
 ﻿namespace GitterClient
 {
     using System;
+    using System.Collections.Generic;
     using System.Diagnostics;
     using System.Net.Http;
+    using System.Net.Http.Headers;
     using System.Threading.Tasks;
     using Windows.ApplicationModel.Activation;
     using Windows.Data.Json;
@@ -15,6 +17,36 @@
     /// </summary>
     public sealed partial class AuthenticationPage : IWebAuthenticationContinuable
     {
+        /// <summary>
+        /// The redirect url.
+        /// </summary>
+        private const string RedirectUrl = "http://localhost";
+
+        /// <summary>
+        /// The client key.
+        /// </summary>
+        private const string ClientKey = "cbcfeee1efe6e37d386e6ec58e4df68339e567e7";
+
+        /// <summary>
+        /// The oauth secret.
+        /// </summary>
+        private const string OauthSecret = "75f3c739cd011d1b2a218fe04f615adb62a19f49";
+
+        /// <summary>
+        /// The Gitter base address.
+        /// </summary>
+        private const string GitterBaseAddress = "https://gitter.im";
+
+        /// <summary>
+        /// The token endpoint.
+        /// </summary>
+        private const string TokenEndpoint = "/login/oauth/token";
+
+        /// <summary>
+        /// The auth endpoint.
+        /// </summary>
+        private const string AuthEndPoint = "/login/oauth/authorize";
+
         /// <summary>
         /// Initializes a new instance of the <see cref="AuthenticationPage"/> class.
         /// </summary>
@@ -43,10 +75,10 @@
         /// </param>
         private void ConnectClick(object sender, RoutedEventArgs e)
         {
-            const string gitterUrl = "https://gitter.im/login/oauth/authorize?response_type=code&redirect_uri=" + "http://localhost" + "&client_id=" + "cbcfeee1efe6e37d386e6ec58e4df68339e567e7";
+            var gitterUrl = string.Format("{0}{1}?response_type=code&redirect_uri={2}&client_id={3}", GitterBaseAddress, AuthEndPoint, RedirectUrl, ClientKey);
 
             var startUri = new Uri(gitterUrl);
-            var endUri = new Uri("http://localhost");
+            var endUri = new Uri(RedirectUrl);
 
             WebAuthenticationBroker.AuthenticateAndContinue(startUri, endUri, null, WebAuthenticationOptions.None);
         }
@@ -64,55 +96,52 @@
             if (result.ResponseStatus == WebAuthenticationStatus.Success)
             {
                 Debug.WriteLine(result.ResponseData);
-                await GetFacebookUserNameAsync(result.ResponseData);
+                await GetAccessToken(result.ResponseData);
             }
             else if (result.ResponseStatus == WebAuthenticationStatus.ErrorHttp)
             {
-                Debug.WriteLine("HTTP Error returned by AuthenticateAsync() : " + result.ResponseErrorDetail);
+                Debug.WriteLine("HTTP Error : " + result.ResponseErrorDetail);
             }
             else
             {
-                Debug.WriteLine("Error returned by AuthenticateAsync() : " + result.ResponseStatus);
+                Debug.WriteLine("Error : " + result.ResponseStatus);
             }
         }
 
         /// <summary>
-        /// This function extracts access_token from the response returned from web authentication broker
-        /// and uses that token to get user information using facebook graph api. 
+        /// The get access token.
         /// </summary>
-        /// <param name="webAuthResultResponseData">
-        /// responseData returned from AuthenticateAsync result.
+        /// <param name="authorizationCode">
+        /// The web auth result response data.
         /// </param>
         /// <returns>
         /// The <see cref="Task"/>.
         /// </returns>
-        private async Task GetFacebookUserNameAsync(string webAuthResultResponseData)
+        private async Task GetAccessToken(string authorizationCode)
         {
-            // Get Access Token first
-            string responseData = webAuthResultResponseData.Substring(webAuthResultResponseData.IndexOf("access_token"));
-            var keyValPairs = responseData.Split('&');
-            string accessToken = null;
+            var authCode = authorizationCode.Split('=')[1];
 
-            foreach (string keyValue in keyValPairs)
+            using (var httpClient = new HttpClient())
             {
-                string[] splits = keyValue.Split('=');
-                switch (splits[0])
+                httpClient.BaseAddress = new Uri(GitterBaseAddress);
+                httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                var content = new FormUrlEncodedContent(new[] 
                 {
-                    case "access_token":
-                        accessToken = splits[1];
-                        break;
-                    case "expires_in":
-                        break;
-                }
+                    new KeyValuePair<string, string>("client_id", ClientKey),
+                    new KeyValuePair<string, string>("client_secret", OauthSecret),
+                    new KeyValuePair<string, string>("code", authCode),
+                    new KeyValuePair<string, string>("redirect_uri", RedirectUrl),
+                    new KeyValuePair<string, string>("grant_type", "authorization_code"),
+                });
+
+                var result = await httpClient.PostAsync(TokenEndpoint, content);
+                string resultContent = result.Content.ReadAsStringAsync().Result;
+                JsonObject value = JsonValue.Parse(resultContent).GetObject();
+                string accessToken = value.GetNamedString("access_token");
+
+                Debug.WriteLine("Access Token = " + accessToken);
             }
-
-            Debug.WriteLine("access_token = " + accessToken);
-
-            // Request User info.
-            var httpClient = new HttpClient();
-            var response = await httpClient.GetStringAsync(new Uri("https://graph.facebook.com/me?access_token=" + accessToken));
-            var value = JsonValue.Parse(response).GetObject();
-            var facebookUserName = value.GetNamedString("name");
         }
     }
 }
