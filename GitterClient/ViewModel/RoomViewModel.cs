@@ -36,9 +36,9 @@
         {
             get
             {
-                if (Room.User != null && Room.User.AvatarUrlSmall != null)
+                if (Room.user != null && Room.user.avatarUrlSmall != null)
                 {
-                    return new Uri(Room.User.AvatarUrlSmall);
+                    return new Uri(Room.user.avatarUrlSmall);
                 }
 
                 return null;
@@ -50,7 +50,7 @@
         /// </summary>
         public string Id
         {
-            get { return Room.Id; }
+            get { return Room.id; }
         }
 
         /// <summary>
@@ -58,7 +58,7 @@
         /// </summary>
         public string Name
         {
-            get { return Room.Name; }
+            get { return Room.name; }
         }
 
         /// <summary>
@@ -66,7 +66,7 @@
         /// </summary>
         public string Topic
         {
-            get { return Room.Topic; }
+            get { return Room.topic; }
         }
     }
 }

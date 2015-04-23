@@ -34,5 +34,10 @@
         /// The auth endpoint.
         /// </summary>
         public const string AuthEndPoint = "/login/oauth/authorize";
+
+        /// <summary>
+        /// The gitter api.
+        /// </summary>
+        public const string GitterApi = "https://api.gitter.im/v1";
     }
 }

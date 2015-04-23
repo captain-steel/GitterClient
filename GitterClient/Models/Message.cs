@@ -10,61 +10,61 @@
         /// <summary>
         /// Gets or sets the edited at.
         /// </summary>
-        public object EditedAt { get; set; }
+        public object editedAt { get; set; }
 
         /// <summary>
         /// Gets or sets the from user.
         /// </summary>
-        public User FromUser { get; set; }
+        public User fromUser { get; set; }
 
         /// <summary>
         /// Gets or sets the html.
         /// </summary>
-        public string Html { get; set; }
+        public string html { get; set; }
 
         /// <summary>
         /// Gets or sets the id.
         /// </summary>
-        public string Id { get; set; }
+        public string id { get; set; }
 
         /// <summary>
         /// Gets or sets the issues.
         /// </summary>
-        public List<object> Issues { get; set; }
+        public List<object> issues { get; set; }
 
         /// <summary>
         /// Gets or sets the mentions.
         /// </summary>
-        public List<object> Mentions { get; set; }
+        public List<object> mentions { get; set; }
 
         /// <summary>
         /// Gets or sets the read by.
         /// </summary>
-        public int ReadBy { get; set; }
+        public int readBy { get; set; }
 
         /// <summary>
         /// Gets or sets the sent.
         /// </summary>
-        public string Sent { get; set; }
+        public string sent { get; set; }
 
         /// <summary>
         /// Gets or sets the text.
         /// </summary>
-        public string Text { get; set; }
+        public string text { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether unread.
         /// </summary>
-        public bool Unread { get; set; }
+        public bool unread { get; set; }
 
         /// <summary>
         /// Gets or sets the urls.
         /// </summary>
-        public List<object> Urls { get; set; }
+        public List<object> urls { get; set; }
 
         /// <summary>
         /// Gets or sets the v.
         /// </summary>
-        public int V { get; set; }
+        public int v { get; set; }
     }
 }

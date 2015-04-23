@@ -1,4 +1,7 @@
-﻿namespace GitterClient
+﻿using GitterClient.Api;
+using Refit;
+
+namespace GitterClient
 {
     using System;
     using System.Collections.Generic;
@@ -92,8 +95,11 @@
                 string accessToken = value.GetNamedString("access_token");
 
                 Debug.WriteLine("Access Token = " + accessToken);
-                App.Token = accessToken;
+                App.Token = string.Format("Bearer {0}", accessToken);
             }
+
+            var client = RestService.For<IGitterApi>(Constants.GitterApi);
+            var rooms = await client.GetRooms(App.Token);  
 
             Frame.Navigate(typeof(RoomsPage));
         }
