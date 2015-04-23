@@ -19,6 +19,11 @@
         private ContinuationManager _continuationManager;
 
         /// <summary>
+        /// Gets or sets the token.
+        /// </summary>
+        internal static string Token { get; set; }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="App"/> class. 
         /// Initializes the singleton application object.  
         /// This is the first line of authored code executed, and as such is the logical equivalent of main() or WinMain().
@@ -26,6 +31,7 @@
         public App()
         {
             InitializeComponent();
+            
             Suspending += OnSuspending;
         }
 

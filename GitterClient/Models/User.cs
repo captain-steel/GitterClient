@@ -5,16 +5,34 @@
     /// </summary>
     public class User
     {
-        public string avatarUrlMedium { get; set; }
+        /// <summary>
+        /// Gets or sets the avatar url medium.
+        /// </summary>
+        public string AvatarUrlMedium { get; set; }
 
-        public string avatarUrlSmall { get; set; }
+        /// <summary>
+        /// Gets or sets the avatar url small.
+        /// </summary>
+        public string AvatarUrlSmall { get; set; }
 
-        public string displayName { get; set; }
+        /// <summary>
+        /// Gets or sets the display name.
+        /// </summary>
+        public string DisplayName { get; set; }
 
-        public string id { get; set; }
+        /// <summary>
+        /// Gets or sets the id.
+        /// </summary>
+        public string Id { get; set; }
 
-        public string url { get; set; }
+        /// <summary>
+        /// Gets or sets the url.
+        /// </summary>
+        public string Url { get; set; }
 
-        public string username { get; set; }
+        /// <summary>
+        /// Gets or sets the username.
+        /// </summary>
+        public string Username { get; set; }
     }
 }

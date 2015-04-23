@@ -5,34 +5,79 @@
     /// </summary>
     public class Room
     {
-        public string githubType { get; set; }
+        /// <summary>
+        /// Gets or sets the github type.
+        /// </summary>
+        public string GithubType { get; set; }
 
-        public string id { get; set; }
+        /// <summary>
+        /// Gets or sets the id.
+        /// </summary>
+        public string Id { get; set; }
 
-        public string lastAccessTime { get; set; }
+        /// <summary>
+        /// Gets or sets the last access time.
+        /// </summary>
+        public string LastAccessTime { get; set; }
 
-        public bool lurk { get; set; }
+        /// <summary>
+        /// Gets or sets a value indicating whether lurk.
+        /// </summary>
+        public bool Lurk { get; set; }
 
-        public int mentions { get; set; }
+        /// <summary>
+        /// Gets or sets the mentions.
+        /// </summary>
+        public int Mentions { get; set; }
 
-        public string name { get; set; }
+        /// <summary>
+        /// Gets or sets the name.
+        /// </summary>
+        public string Name { get; set; }
 
-        public bool oneToOne { get; set; }
+        /// <summary>
+        /// Gets or sets a value indicating whether one to one.
+        /// </summary>
+        public bool OneToOne { get; set; }
 
-        public string security { get; set; }
+        /// <summary>
+        /// Gets or sets the security.
+        /// </summary>
+        public string Security { get; set; }
 
-        public string topic { get; set; }
+        /// <summary>
+        /// Gets or sets the topic.
+        /// </summary>
+        public string Topic { get; set; }
 
-        public int unreadItems { get; set; }
+        /// <summary>
+        /// Gets or sets the unread items.
+        /// </summary>
+        public int UnreadItems { get; set; }
 
-        public string uri { get; set; }
+        /// <summary>
+        /// Gets or sets the uri.
+        /// </summary>
+        public string Uri { get; set; }
 
-        public string url { get; set; }
+        /// <summary>
+        /// Gets or sets the url.
+        /// </summary>
+        public string Url { get; set; }
 
-        public User user { get; set; }
+        /// <summary>
+        /// Gets or sets the user.
+        /// </summary>
+        public User User { get; set; }
 
-        public int? userCount { get; set; }
+        /// <summary>
+        /// Gets or sets the user count.
+        /// </summary>
+        public int? UserCount { get; set; }
 
-        public int? v { get; set; }
+        /// <summary>
+        /// Gets or sets the v.
+        /// </summary>
+        public int? V { get; set; }
     }
 }

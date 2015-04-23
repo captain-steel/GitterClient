@@ -1,16 +1,7 @@
-﻿using Windows.UI.Xaml.Navigation;
-
-namespace GitterClient
+﻿namespace GitterClient
 {
-    using System;
-    using System.Diagnostics;
-    using System.Net.Http;
-    using System.Threading.Tasks;
-    using Windows.ApplicationModel.Activation;
-    using Windows.Data.Json;
     using Windows.Phone.UI.Input;
-    using Windows.Security.Authentication.Web;
-    using Windows.UI.Xaml;
+    using Windows.UI.Xaml.Navigation;
 
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
