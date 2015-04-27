@@ -92,6 +92,7 @@
     <Compile Include="Common\Constants.cs" />
     <Compile Include="ContinuationManager.cs" />
     <Compile Include="Converters\OneToOneConverter.cs" />
+    <Compile Include="Helpers\IsolatedStorage.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>

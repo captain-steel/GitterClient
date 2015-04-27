@@ -1,4 +1,6 @@
-﻿namespace GitterClient
+﻿using GitterClient.Helpers;
+
+namespace GitterClient
 {
     using System;
     using System.Collections.Generic;
@@ -6,9 +8,7 @@
     using System.Net.Http;
     using System.Net.Http.Headers;
     using System.Threading.Tasks;
-    using Api;
     using Common;
-    using Refit;
     using Windows.ApplicationModel.Activation;
     using Windows.Data.Json;
     using Windows.Security.Authentication.Web;
@@ -95,7 +95,7 @@
 
                 Debug.WriteLine("Access Token = " + accessToken);
                 
-                // App.Token = string.Format("Bearer {0}", accessToken);
+                await IsolatedStorage.SaveToken(string.Format("Bearer {0}", accessToken));
             }
 
             Frame.Navigate(typeof(RoomsPage));

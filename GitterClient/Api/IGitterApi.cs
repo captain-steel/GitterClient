@@ -1,9 +1,8 @@
-﻿using System.Collections.ObjectModel;
-
-namespace GitterClient.Api
+﻿namespace GitterClient.Api
 {
     using System;
     using System.Collections.Generic;
+    using System.Collections.ObjectModel;
     using System.Threading.Tasks;
     using Refit;
 

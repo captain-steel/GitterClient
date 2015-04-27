@@ -1,5 +1,3 @@
-using GalaSoft.MvvmLight.Views;
-
 namespace GitterClient.ViewModel
 {
     using GalaSoft.MvvmLight.Ioc;

@@ -1,4 +1,6 @@
-﻿namespace GitterClient.ViewModel
+﻿using GitterClient.Helpers;
+
+namespace GitterClient.ViewModel
 {
     using System.Collections.ObjectModel;
     using GalaSoft.MvvmLight;
@@ -76,7 +78,7 @@
         {
             var client = RestService.For<IGitterApi>(Constants.GitterApi);
 
-            RoomsList = await client.GetRooms(App.Token);
+            RoomsList = await client.GetRooms(await IsolatedStorage.GetToken());
         }
 
         /// <summary>
@@ -84,7 +86,6 @@
         /// </summary>
         private void EnterRoomCommandExecute()
         {
-
         }
 
         #endregion

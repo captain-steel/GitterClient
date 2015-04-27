@@ -1,4 +1,6 @@
-﻿namespace GitterClient.ViewModel
+﻿using GitterClient.Helpers;
+
+namespace GitterClient.ViewModel
 {
     using System;
     using GalaSoft.MvvmLight;
@@ -13,14 +15,6 @@
     /// </summary>
     public class AuthenticationViewModel : ViewModelBase
     {
-        /// <summary>
-        /// Gets the token.
-        /// </summary>
-        public string Token
-        {
-            get { return App.Token; }
-        }
-
         #region RelayCommands
 
         /// <summary>
@@ -41,16 +35,22 @@
         /// <summary>
         /// The connect command execute.
         /// </summary>
-        private void ConnectCommandExecute()
+        private async void ConnectCommandExecute()
         {
-            ((Frame)Window.Current.Content).Navigate(typeof(RoomsPage));
-            
-            /*var gitterUrl = string.Format("{0}{1}?response_type=code&redirect_uri={2}&client_id={3}", Constants.GitterBaseAddress, Constants.AuthEndPoint, Constants.RedirectUrl, Constants.ClientKey);
+            var token = await IsolatedStorage.GetToken();
+            if (!string.IsNullOrEmpty(token))
+            {
+                ((Frame)Window.Current.Content).Navigate(typeof(RoomsPage)); 
+
+                return;
+            }
+
+            var gitterUrl = string.Format("{0}{1}?response_type=code&redirect_uri={2}&client_id={3}", Constants.GitterBaseAddress, Constants.AuthEndPoint, Constants.RedirectUrl, Constants.ClientKey);
 
             var startUri = new Uri(gitterUrl);
             var endUri = new Uri(Constants.RedirectUrl);
 
-            WebAuthenticationBroker.AuthenticateAndContinue(startUri, endUri, null, WebAuthenticationOptions.None);*/
+            WebAuthenticationBroker.AuthenticateAndContinue(startUri, endUri, null, WebAuthenticationOptions.None);
         }
     }
 }
