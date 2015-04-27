@@ -1,4 +1,21 @@
-﻿namespace Models
+﻿/* Message schema
+ * https://developer.gitter.im/docs/messages-resource
+ *  id: ID of the message.
+ *  text: Original message in plain-text/markdown.
+ *  html: HTML formatted message.
+ *  sent: ISO formated date of the message.
+ *  editedAt: ISO formated date of the message if edited.
+ *  fromUser: (User)[user-resource] that sent the message.
+ *  unread: Boolean that indicats if the current user has read the messsage.
+ *  readBy: Number of users that have read the message.
+ *  urls: List of URLs present in the message.
+ *  mentions: List of @Mentions in the message.
+ *  issues: List of #Issues referenced in the message.
+ *  meta: Metadata.
+ *  v: Version. 
+*/
+
+namespace GitterClient
 {
     using System.Collections.Generic;
 

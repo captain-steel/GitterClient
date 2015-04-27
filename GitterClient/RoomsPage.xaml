@@ -7,7 +7,9 @@
       DataContext="{Binding Source={StaticResource Locator}, Path=RoomsViewModel}"
       mc:Ignorable="d">
 
-    <Grid>
-        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="Roooooms" />
+    <Grid Background="Transparent">
+        <ListBox Margin="5" 
+                 ItemTemplate="{StaticResource RoomsTemplate}" 
+                 ItemsSource="{Binding RoomsList}" />
     </Grid>
 </Page>

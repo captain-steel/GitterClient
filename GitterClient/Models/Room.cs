@@ -1,4 +1,22 @@
-﻿namespace Models
+﻿/* Room schema
+ * https://developer.gitter.im/docs/rooms-resource
+ *  id: Room ID.
+ *  name: Room name.
+ *  topic: Room topic. (default: GitHub repo description)
+ *  uri: Room URI on Gitter.
+ *  oneToOne: Indicates if the room is a one-to-one chat.
+ *  users: List of users in the room.
+ *  userCount: Count of users in the room.
+ *  unreadItems: Number of unread messages for the current user.
+ *  mentions: Number of unread mentions for the current user.
+ *  lastAccessTime: Last time the current user accessed the room in ISO format.
+ *  lurk: Indicates if the current user has disabled notifications.
+ *  url: Path to the room on gitter.
+ *  githubType: Type of the room.
+ *  v: Room version. 
+*/
+
+namespace GitterClient
 {
     /// <summary>
     /// The room.

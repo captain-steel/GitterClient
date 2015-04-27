@@ -1,9 +1,10 @@
-﻿namespace GitterClient.Api
+﻿using System.Collections.ObjectModel;
+
+namespace GitterClient.Api
 {
     using System;
     using System.Collections.Generic;
     using System.Threading.Tasks;
-    using Models;
     using Refit;
 
     /// <summary>
@@ -22,7 +23,7 @@
         /// The <see cref="Task"/>.
         /// </returns>
         [Get("/rooms")]
-        Task<IReadOnlyList<Room>> GetRooms([Header("Authorization")] string accessToken);
+        Task<ObservableCollection<Room>> GetRooms([Header("Authorization")] string accessToken);
 
         /// <summary>
         /// The get messages.

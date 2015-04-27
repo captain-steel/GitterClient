@@ -1,4 +1,14 @@
-﻿namespace Models
+﻿/* User schema
+ * https://developer.gitter.im/docs/user-resource
+ *  id: Gitter User ID.
+ *  username: Gitter/GitHub username.
+ *  displayName: Gitter/GitHub user real name.
+ *  url: Path to the user on Gitter.
+ *  avatarUrlSmall: User avatar URI (small).
+ *  avatarUrlMedium: User avatar URI (medium).
+*/
+
+namespace GitterClient
 {
     /// <summary>
     /// The user.

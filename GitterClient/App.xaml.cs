@@ -19,9 +19,12 @@
         private ContinuationManager _continuationManager;
 
         /// <summary>
-        /// Gets or sets the token.
+        /// Gets the token. /// Gets or sets the token
         /// </summary>
-        internal static string Token { get; set; }
+        internal static string Token // internal static string Token { get; set; }
+        {
+            get { return "Bearer 5db70a20cc3dad3bc389f3c6eb4e673ab1f8fc80"; }
+        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="App"/> class. 

@@ -2,8 +2,8 @@
 using System.Net.Http;
 using System.Collections.Generic;
 using System.Linq;
+using System.Collections.ObjectModel;
 using System.Threading.Tasks;
-using Models;
 using Refit;
 
 /* ******** Hey You! *********
@@ -44,10 +44,22 @@ namespace GitterClient.Api
             Client = client;
         }
 
-        public virtual Task<List<Room>> GetRooms(string accessToken)
+        public virtual Task<ObservableCollection<Room>> GetRooms(string accessToken)
         {
             var arguments = new object[] { accessToken };
-            return (Task<List<Room>>) methodImpls["GetRooms"](Client, arguments);
+            return (Task<ObservableCollection<Room>>) methodImpls["GetRooms"](Client, arguments);
+        }
+
+        public virtual IObservable<IReadOnlyList<Message>> GetMessages(string roomId,string accessToken)
+        {
+            var arguments = new object[] { roomId,accessToken };
+            return (IObservable<IReadOnlyList<Message>>) methodImpls["GetMessages"](Client, arguments);
+        }
+
+        public virtual IObservable<IReadOnlyList<User>> GetRoomUsers(string roomId,string accessToken)
+        {
+            var arguments = new object[] { roomId,accessToken };
+            return (IObservable<IReadOnlyList<User>>) methodImpls["GetRoomUsers"](Client, arguments);
         }
 
     }

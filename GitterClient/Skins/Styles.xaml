@@ -1,0 +1,48 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+                    xmlns:core="using:Microsoft.Xaml.Interactions.Core">
+    
+    <Style x:Key="LabelTextStyle" TargetType="TextBlock">
+        <Setter Property="Margin" Value="12,0" />
+        <Setter Property="FontFamily" Value="Segoe WP" />
+    </Style>
+
+    <Style x:Key="NameLabelTextStyle" TargetType="TextBlock">
+        <Setter Property="Margin" Value="0,12,10,12" />
+        <Setter Property="FontFamily" Value="Segoe WP" />
+        <Setter Property="FontSize" Value="24" />
+    </Style>
+
+    <DataTemplate x:Key="RoomsTemplate">
+        <Grid Margin="12,0,12,12">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Image Grid.Column="0"
+                   Width="100"
+                   Height="100"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   Source="{Binding oneToOne, Converter={StaticResource OneToOneConverter}}" />
+
+            <StackPanel Grid.Column="1" Background="#00000000">
+                <interactivity:Interaction.Behaviors>
+                    <core:EventTriggerBehavior EventName="Tapped">
+                        <core:InvokeCommandAction Command="{Binding RoomsViewModel.EnterRoomCommand, Mode=OneWay, Source={StaticResource Locator}}" />
+                    </core:EventTriggerBehavior>
+                </interactivity:Interaction.Behaviors>
+
+                <TextBlock Margin="0,0,10,0"
+                           Style="{StaticResource NameLabelTextStyle}"
+                           Text="{Binding name}" />
+
+                <TextBlock Margin="0,5,10,0"
+                           FontSize="36"
+                           Style="{StaticResource NameLabelTextStyle}"
+                           Text="{Binding uri}" />
+            </StackPanel>
+        </Grid>
+    </DataTemplate>
+</ResourceDictionary>
