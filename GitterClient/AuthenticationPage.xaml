@@ -4,14 +4,4 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
-      DataContext="{Binding Path=AuthenticationViewModel,
-                            Source={StaticResource Locator}}"
-      mc:Ignorable="d">
-
-    <Grid>
-        <Button HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                Command="{Binding ConnectCommand}"
-                Content="Connect" />
-    </Grid>
-</Page>
+      mc:Ignorable="d" />

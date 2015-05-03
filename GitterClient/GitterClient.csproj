@@ -106,7 +106,6 @@
     </Compile>
     <Compile Include="SuspensionManager.cs" />
     <Compile Include="SuspensionManagerException.cs" />
-    <Compile Include="ViewModel\AuthenticationViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\RoomsViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
@@ -224,7 +223,6 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <SDKReference Include="BehaviorsXamlSDKManaged, Version=12.0">
       <Name>Behaviors SDK %28XAML%29</Name>

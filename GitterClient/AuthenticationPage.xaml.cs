@@ -1,6 +1,4 @@
-﻿using GitterClient.Helpers;
-
-namespace GitterClient
+﻿namespace GitterClient
 {
     using System;
     using System.Collections.Generic;
@@ -8,11 +6,15 @@ namespace GitterClient
     using System.Net.Http;
     using System.Net.Http.Headers;
     using System.Threading.Tasks;
-    using Common;
+
+    using GitterClient.Common;
+    using GitterClient.Helpers;
+
     using Windows.ApplicationModel.Activation;
     using Windows.Data.Json;
     using Windows.Security.Authentication.Web;
-    using Windows.UI.Xaml.Navigation;
+    using Windows.UI.Xaml;
+    using Windows.UI.Xaml.Controls;
 
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
@@ -20,20 +22,46 @@ namespace GitterClient
     public sealed partial class AuthenticationPage : IWebAuthenticationContinuable
     {
         /// <summary>
+        /// The dispatcher timer.
+        /// </summary>
+        private readonly DispatcherTimer _dispatcherTimer = new DispatcherTimer();
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="AuthenticationPage"/> class.
         /// </summary>
         public AuthenticationPage()
         {
             InitializeComponent();
+
+            _dispatcherTimer.Interval = new TimeSpan(0, 0, 0);
+            _dispatcherTimer.Tick += DispatcherTick;
+            _dispatcherTimer.Start();
         }
 
         /// <summary>
-        /// Invoked when this page is about to be displayed in a Frame.
+        /// The dispatcher tick.
         /// </summary>
-        /// <param name="e">Event data that describes how this page was reached.
-        /// This parameter is typically used to configure the page.</param>
-        protected override void OnNavigatedTo(NavigationEventArgs e)
+        /// <param name="sender">The sender.</param>
+        /// <param name="e">The event args</param>
+        /// <remarks>http://stackoverflow.com/questions/23267918</remarks>
+        private async void DispatcherTick(object sender, object e)
         {
+            _dispatcherTimer.Stop();
+            
+            var token = await IsolatedStorage.GetToken();
+            if (!string.IsNullOrEmpty(token))
+            {
+                ((Frame)Window.Current.Content).Navigate(typeof(RoomsPage));
+
+                return;
+            }
+
+            var gitterUrl = string.Format("{0}{1}?response_type=code&redirect_uri={2}&client_id={3}", Constants.GitterBaseAddress, Constants.AuthEndPoint, Constants.RedirectUrl, Constants.ClientKey);
+
+            var startUri = new Uri(gitterUrl);
+            var endUri = new Uri(Constants.RedirectUrl);
+
+            WebAuthenticationBroker.AuthenticateAndContinue(startUri, endUri, null, WebAuthenticationOptions.None);
         }
 
         /// <summary>
@@ -85,7 +113,7 @@ namespace GitterClient
                     new KeyValuePair<string, string>("client_secret", Constants.OauthSecret),
                     new KeyValuePair<string, string>("code", authCode),
                     new KeyValuePair<string, string>("redirect_uri", Constants.RedirectUrl),
-                    new KeyValuePair<string, string>("grant_type", "authorization_code"),
+                    new KeyValuePair<string, string>("grant_type", "authorization_code")
                 });
 
                 var result = await httpClient.PostAsync(Constants.TokenEndpoint, content);

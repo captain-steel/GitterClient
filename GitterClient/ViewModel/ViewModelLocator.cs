@@ -28,7 +28,6 @@ namespace GitterClient.ViewModel
             ////}
 
             SimpleIoc.Default.Register<MainViewModel>();
-            SimpleIoc.Default.Register<AuthenticationViewModel>();
             SimpleIoc.Default.Register<RoomsViewModel>();
         }
 
@@ -38,14 +37,6 @@ namespace GitterClient.ViewModel
         public MainViewModel MainViewModel
         {
             get { return ServiceLocator.Current.GetInstance<MainViewModel>(); }
-        }
-
-        /// <summary>
-        /// Gets the authentication view model.
-        /// </summary>
-        public AuthenticationViewModel AuthenticationViewModel
-        {
-            get { return ServiceLocator.Current.GetInstance<AuthenticationViewModel>(); }
         }
 
         /// <summary>
