@@ -1,12 +1,16 @@
-﻿using GitterClient.Helpers;
-
-namespace GitterClient.ViewModel
+﻿namespace GitterClient.ViewModel
 {
     using System.Collections.ObjectModel;
+
     using GalaSoft.MvvmLight;
     using GalaSoft.MvvmLight.Command;
-    using Api;
-    using Common;
+    using GalaSoft.MvvmLight.Messaging;
+    using GalaSoft.MvvmLight.Views;
+
+    using GitterClient.Api;
+    using GitterClient.Common;
+    using GitterClient.Helpers;
+
     using Refit;
 
     /// <summary>
@@ -14,6 +18,15 @@ namespace GitterClient.ViewModel
     /// </summary>
     public class RoomsViewModel : ViewModelBase
     {
+        #region Private fields
+
+        /// <summary>
+        /// The navigation service.
+        /// </summary>
+        private INavigationService _navigationService;
+
+        #endregion
+
         #region Properties
 
         /// <summary>
@@ -45,8 +58,13 @@ namespace GitterClient.ViewModel
         /// <summary>
         /// Initializes a new instance of the <see cref="RoomsViewModel"/> class.
         /// </summary>
-        public RoomsViewModel()
+        /// <param name="navigationService">
+        /// The navigation service.
+        /// </param>
+        public RoomsViewModel(INavigationService navigationService)
         {
+            _navigationService = navigationService;
+
             GetRooms();
         }
 
@@ -57,14 +75,14 @@ namespace GitterClient.ViewModel
         /// <summary>
         /// The _enter room command.
         /// </summary>
-        private RelayCommand _enterRoomCommand;
+        private RelayCommand<Room> _enterRoomCommand;
 
         /// <summary>
         /// Gets the enter room command.
         /// </summary>
-        public RelayCommand EnterRoomCommand
+        public RelayCommand<Room> EnterRoomCommand
         {
-            get { return _enterRoomCommand ?? (_enterRoomCommand = new RelayCommand(EnterRoomCommandExecute)); }
+            get { return _enterRoomCommand ?? (_enterRoomCommand = new RelayCommand<Room>(EnterRoomCommandExecute)); }
         }
 
         #endregion
@@ -84,8 +102,17 @@ namespace GitterClient.ViewModel
         /// <summary>
         /// The enter room command execute.
         /// </summary>
-        private void EnterRoomCommandExecute()
+        /// <param name="room">
+        /// The room.
+        /// </param>
+        private void EnterRoomCommandExecute(object room)
         {
+            Messenger.Default.Send((Room)room);
+            
+            /*var navigationService = ServiceLocator.Current.GetInstance<INavigationService>();
+            navigationService.NavigateTo("Room");*/
+
+            _navigationService.NavigateTo("Room");
         }
 
         #endregion

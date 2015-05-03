@@ -1,6 +1,8 @@
 namespace GitterClient.ViewModel
 {
     using GalaSoft.MvvmLight.Ioc;
+    using GalaSoft.MvvmLight.Views;
+
     using Microsoft.Practices.ServiceLocation;
 
     /// <summary>
@@ -16,19 +18,38 @@ namespace GitterClient.ViewModel
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
-            ////if (ViewModelBase.IsInDesignModeStatic)
-            ////{
-            ////    // Create design time view services and models
-            ////    SimpleIoc.Default.Register<IDataService, DesignDataService>();
-            ////}
-            ////else
-            ////{
-            ////    // Create run time view services and models
-            ////    SimpleIoc.Default.Register<IDataService, DataService>();
-            ////}
+            var navigationService = this.CreateNavigationService();
+            SimpleIoc.Default.Register<INavigationService>(() => navigationService);
+            
+            SimpleIoc.Default.Register(() => new MainViewModel());
+            SimpleIoc.Default.Register(() => new RoomsViewModel(NavigationService));
+            SimpleIoc.Default.Register(() => new RoomViewModel(NavigationService), true);
+        }
 
-            SimpleIoc.Default.Register<MainViewModel>();
-            SimpleIoc.Default.Register<RoomsViewModel>();
+        /// <summary>
+        /// The create navigation service.
+        /// </summary>
+        /// <returns>
+        /// The <see cref="INavigationService"/>.
+        /// </returns>
+        private INavigationService CreateNavigationService()
+        {
+            var navigationService = new NavigationService();
+
+            navigationService.Configure("Main", typeof(MainPage));
+            navigationService.Configure("Room", typeof(RoomPage));
+            navigationService.Configure("Rooms", typeof(RoomsPage));
+            navigationService.Configure("Authentication", typeof(AuthenticationPage));
+
+            return navigationService;
+        }
+
+        /// <summary>
+        /// Gets the navigation service.
+        /// </summary>
+        public INavigationService NavigationService
+        {
+            get { return ServiceLocator.Current.GetInstance<INavigationService>(); }
         }
 
         /// <summary>
@@ -45,6 +66,14 @@ namespace GitterClient.ViewModel
         public RoomsViewModel RoomsViewModel
         {
             get { return ServiceLocator.Current.GetInstance<RoomsViewModel>(); }
+        }
+
+        /// <summary>
+        /// Gets the room view model.
+        /// </summary>
+        public RoomViewModel RoomViewModel
+        {
+            get { return ServiceLocator.Current.GetInstance<RoomViewModel>(); }
         }
 
         /// <summary>
