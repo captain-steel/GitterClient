@@ -1,3 +1,4 @@
 language: csharp
 solution: GitterClient.sln
 install:
+  - nuget restore GitterClient.sln
