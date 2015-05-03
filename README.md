@@ -9,9 +9,9 @@ This project is using :
 - [MVVM Light](https://mvvmlight.codeplex.com/)
 - [Refit](https://github.com/paulcbetts/refit)
 - [Splat](https://github.com/paulcbetts/splat)
-- [Json.NET](http://www.newtonsoft.com/json)
+- [Json.NET](https://github.com/JamesNK/Newtonsoft.Json)
 - [Reactive Extensions](http://rx.codeplex.com/)
-- [RectiveUI](http://reactiveui.net/)
+- [RectiveUI](https://github.com/reactiveui/ReactiveUI)
 
 **DONE**
 - Getting the Authorization key
