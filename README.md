@@ -1,6 +1,6 @@
 # GitterClient
 
-![AppVeyor](https://ci.appveyor.com/api/projects/status/lqdbjqjel62wfncg?svg=true)
+[![AppVeyor](https://ci.appveyor.com/api/projects/status/lqdbjqjel62wfncg?svg=true)](https://ci.appveyor.com/project/wassim-azirar/gitterclient)
 
 [![Join the chat at https://gitter.im/wassim-azirar/GitterClient](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/wassim-azirar/GitterClient?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 Windows Phone client for Gitter
