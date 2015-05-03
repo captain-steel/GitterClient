@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/wassim-azirar/GitterClient.png?label=ready&title=Ready)](https://waffle.io/wassim-azirar/GitterClient)
 # GitterClient
 
 [![AppVeyor](https://ci.appveyor.com/api/projects/status/lqdbjqjel62wfncg?svg=true)](https://ci.appveyor.com/project/wassim-azirar/gitterclient)
