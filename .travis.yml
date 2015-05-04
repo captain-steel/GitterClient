@@ -1,21 +1,19 @@
-language: c
-
+language: csharp
+solution: GitterClient.sln
+sudo: true
 before_install:
   - sudo apt-get update -qq
   - sudo apt-get install -qq mono-devel mono-gmcs
+  - sudo apt-get install -y gtk-sharp2
   - mozroots --import --sync
   - export EnableNuGetPackageRestore=true
-
 install:
   - nuget restore GitterClient.sln
-  
 script:
   - xbuild /p:Configuration=Release GitterClient.sln
-
 notifications:
   email:
     - wassim.azirar@gmail.com
-
 env:
   global:
     - EnableNuGetPackageRestore=true
