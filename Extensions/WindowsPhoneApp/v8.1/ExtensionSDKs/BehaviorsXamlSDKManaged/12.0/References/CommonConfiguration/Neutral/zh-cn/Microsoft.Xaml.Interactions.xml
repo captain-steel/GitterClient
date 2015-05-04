@@ -1,0 +1,502 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.Xaml.Interactions</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.Xaml.Interactions.Core.CallMethodAction">
+            <summary>
+            一项操作，它在被调用时会对指定的对象调用方法。
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactions.Core.CallMethodAction.Execute(System.Object,System.Object)">
+            <summary>
+            执行此操作。
+            </summary>
+            <param name="sender">由行为传递给操作的 <see cref="T:System.Object"/>。通常这是 <seealso cref="P:Microsoft.Xaml.Interactivity.IBehavior.AssociatedObject"/> 或目标对象。</param>
+            <param name="parameter">此参数的值由调用方决定。</param>
+            <returns>如果调用此方法，则为 true，否则为 false。</returns>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.CallMethodAction.MethodName">
+            <summary>
+            获取或设置要调用的方法的名称。此为依赖属性。
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.CallMethodAction.TargetObject">
+            <summary>
+            获取或设置公开相关方法的对象。此为依赖属性。
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactions.Core.ChangePropertyAction">
+            <summary>
+            一项操作，它在被调用时会将指定的属性更改为指定的值。
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactions.Core.ChangePropertyAction.PropertyNameProperty">
+            <summary>
+            标识 <seealso cref="P:Microsoft.Xaml.Interactions.Core.ChangePropertyAction.PropertyName"/> 依赖属性。
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactions.Core.ChangePropertyAction.TargetObjectProperty">
+            <summary>
+            标识 <seealso cref="P:Microsoft.Xaml.Interactions.Core.ChangePropertyAction.TargetObject"/> 依赖属性。
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactions.Core.ChangePropertyAction.ValueProperty">
+            <summary>
+            标识 <seealso cref="P:Microsoft.Xaml.Interactions.Core.ChangePropertyAction.Value"/> 依赖属性。
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactions.Core.ChangePropertyAction.Execute(System.Object,System.Object)">
+            <summary>
+            执行此操作。
+            </summary>
+            <param name="sender">由行为传递给操作的 <see cref="T:System.Object"/>。通常这是 <seealso cref="P:Microsoft.Xaml.Interactivity.IBehavior.AssociatedObject"/> 或目标对象。</param>
+            <param name="parameter">此参数的值由调用方决定。</param>
+            <returns>如果成功更新属性值，则为 true；否则为 false。</returns>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactions.Core.ChangePropertyAction.ValidateProperty(System.String,System.Reflection.PropertyInfo)">
+            <summary>
+            请确保此属性不是 null 并可以写入数据。
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.ChangePropertyAction.PropertyName">
+            <summary>
+            获取或设置要更改的属性的名称。此为依赖属性。
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.ChangePropertyAction.Value">
+            <summary>
+            获取或设置要设置的值。此为依赖属性。
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.ChangePropertyAction.TargetObject">
+            <summary>
+            获取或设置将更改其属性的对象。
+            如果 <seealso cref="P:Microsoft.Xaml.Interactions.Core.ChangePropertyAction.TargetObject"/> 未设置或无法解析，则将使用 <seealso cref="M:Microsoft.Xaml.Interactions.Core.ChangePropertyAction.Execute(System.Object,System.Object)"/> 的发送器。此为依赖属性。
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactions.Core.ComparisonConditionType">
+            <summary>
+            表示一个三元条件。
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactions.Core.DataBindingHelper.RefreshDataBindingsOnActions(Microsoft.Xaml.Interactivity.ActionCollection)">
+            <summary>
+            确保操作上的所有绑定表达式都是最新的。
+            </summary>
+            <remarks>
+            在数据绑定阶段将触发 DataTriggerBehavior。 由于 ActionCollection 是该行为的子行为，
+            因此该操作上的绑定可能不是最新的。 在执行该操作之前将调用此例程，
+            以便保证所有绑定都是最新的，并且具有最新数据。
+            </remarks>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactions.Core.NavigateToPageAction">
+            <summary>
+            一项将当前可视项切换为指定的 <see cref="T:Windows.UI.Xaml.Controls.Page"/> 的操作。
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactions.Core.NavigateToPageAction.TargetPageProperty">
+            <summary>
+            标识 <seealso cref="P:Microsoft.Xaml.Interactions.Core.NavigateToPageAction.TargetPage"/> 依赖属性。
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactions.Core.NavigateToPageAction.ParameterProperty">
+            <summary>
+            标识 <seealso cref="P:Microsoft.Xaml.Interactions.Core.NavigateToPageAction.Parameter"/> 依赖属性。
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactions.Core.NavigateToPageAction.Execute(System.Object,System.Object)">
+            <summary>
+            执行此操作。
+            </summary>
+            <param name="sender">由行为传递给操作的 <see cref="T:System.Object"/>。通常这是 <seealso cref="P:Microsoft.Xaml.Interactivity.IBehavior.AssociatedObject"/> 或目标对象。</param>
+            <param name="parameter">此参数的值由调用方决定。</param>
+            <returns>如果成功导航到指定页面，则为 true；否则为 false。</returns>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.NavigateToPageAction.TargetPage">
+            <summary>
+            获取或设置要导航到的 <see cref="T:Windows.UI.Xaml.Controls.Page"/> 的完全限定名。此为依赖属性。
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.NavigateToPageAction.Parameter">
+            <summary>
+            获取或设置将传递给 <see cref="M:Windows.UI.Xaml.Controls.Frame.Navigate(System.Type,System.Object)"/> 方法的参数。
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactions.Core.GoToStateAction">
+            <summary>
+            一项在执行时会将 <see cref="T:Windows.UI.Xaml.FrameworkElement"/> 转换为指定的 <seealso cref="T:Windows.UI.Xaml.VisualState"/> 的操作。
+            </summary>
+            <remarks>
+            如果 <seealso cref="P:Microsoft.Xaml.Interactions.Core.GoToStateAction.TargetObject"/> 属性已设置，则此操作将尝试更改目标元素的状态。如果未设置，此操作将遍历
+            元素树，以尝试查找定义状态的另一个目标。<see cref="T:Windows.UI.Xaml.Controls.ControlTemplate"/> 与 <see cref="T:Windows.UI.Xaml.Controls.UserControl"/> 是
+            两个常见结果。
+            </remarks>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactions.Core.GoToStateAction.UseTransitionsProperty">
+            <summary>
+            标识 <seealso cref="P:Microsoft.Xaml.Interactions.Core.GoToStateAction.UseTransitions"/> 依赖属性。
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactions.Core.GoToStateAction.StateNameProperty">
+            <summary>
+            标识 <seealso cref="P:Microsoft.Xaml.Interactions.Core.GoToStateAction.StateName"/> 依赖属性。
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactions.Core.GoToStateAction.TargetObjectProperty">
+            <summary>
+            标识 <seealso cref="P:Microsoft.Xaml.Interactions.Core.GoToStateAction.TargetObject"/> 依赖属性。
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactions.Core.GoToStateAction.Execute(System.Object,System.Object)">
+            <summary>
+            执行此操作。
+            </summary>
+            <param name="sender">由行为传递给操作的 <see cref="T:System.Object"/>。通常这是 <seealso cref="P:Microsoft.Xaml.Interactivity.IBehavior.AssociatedObject"/> 或目标对象。</param>
+            <param name="parameter">此参数的值由调用方决定。</param>
+            <returns>如果成功转换到指定状态，则为 true；否则为 false。</returns>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.GoToStateAction.UseTransitions">
+            <summary>
+            获取或设置是否使用 <see cref="T:Windows.UI.Xaml.VisualTransition"/> 在状态之间进行转换。此为依赖属性。
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.GoToStateAction.StateName">
+            <summary>
+            获取或设置 <see cref="T:Windows.UI.Xaml.VisualState"/> 的名称。此为依赖属性。
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.GoToStateAction.TargetObject">
+            <summary>
+            获取或设置目标对象。此为依赖属性。
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactions.Core.IncrementalUpdateBehavior">
+            <summary>
+            允许对 <seealso cref="T:Windows.UI.Xaml.Controls.ListView"/> 和 <seealso cref="T:Windows.UI.Xaml.Controls.GridView"/> 内容进行增量更新以支持更快速更新的行为。
+            通过将此行为附加到由这些视图使用的 <seealso cref="P:Windows.UI.Xaml.Controls.ItemsControl.ItemTemplate"/> 中的元素，某些更新可延迟到下一次可用呈现时间，从而提供更流畅的体验。
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactions.Core.IncrementalUpdateBehavior.PhaseProperty">
+            <summary>
+            标识 <seealso cref="P:Microsoft.Xaml.Interactions.Core.IncrementalUpdateBehavior.Phase"/> 依赖属性。
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactions.Core.IncrementalUpdateBehavior.IncrementalUpdaterProperty">
+            <summary>
+            标识 <seealso cref="T:Microsoft.Xaml.Interactions.Core.IncrementalUpdateBehavior.IncrementalUpdater"/> 依赖属性。
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactions.Core.IncrementalUpdateBehavior.Attach(Windows.UI.Xaml.DependencyObject)">
+            <summary>
+            附加到指定的对象。
+            </summary>
+            <param name="associatedObject"><seealso cref="T:Microsoft.Xaml.Interactivity.IBehavior"/> 要附加到的 <seealso cref="T:Windows.UI.Xaml.DependencyObject"/>。</param>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactions.Core.IncrementalUpdateBehavior.Detach">
+            <summary>
+            将此实例与其关联的对象分离。
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.IncrementalUpdateBehavior.Phase">
+            <summary>
+            获取或设置此增量更新的相对优先级。阶段值越小，优先级就越高。
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.IncrementalUpdateBehavior.AssociatedObject">
+            <summary>
+            获取 <seealso cref="T:Microsoft.Xaml.Interactivity.IBehavior"/> 附加到的 <seealso cref="T:Windows.UI.Xaml.DependencyObject"/>。
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactions.Core.InvokeCommandAction">
+            <summary>
+            调用时执行指定的 <see cref="T:System.Windows.Input.ICommand"/>。
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.CommandProperty">
+            <summary>
+            标识 <seealso cref="P:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.Command"/> 依赖属性。
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.CommandParameterProperty">
+            <summary>
+            标识 <seealso cref="P:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.CommandParameter"/> 依赖属性。
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverterProperty">
+            <summary>
+            标识 <seealso cref="P:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverter"/> 依赖属性。
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverterParameterProperty">
+            <summary>
+            标识 <seealso cref="P:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverterParameter"/> 依赖属性。
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverterLanguageProperty">
+            <summary>
+            标识 <seealso cref="P:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverterLanguage"/> 依赖属性。
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.Execute(System.Object,System.Object)">
+            <summary>
+            执行此操作。
+            </summary>
+            <param name="sender">由行为传递给操作的 <see cref="T:System.Object"/>。通常这是 <seealso cref="P:Microsoft.Xaml.Interactivity.IBehavior.AssociatedObject"/> 或目标对象。</param>
+            <param name="parameter">此参数的值由调用方决定。</param>
+            <returns>如果成功执行此明令，则为 true；否则为 false。</returns>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.Command">
+            <summary>
+            获取或设置此操作应调用的命令。此为依赖属性。
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.CommandParameter">
+            <summary>
+            获取或设置传递给 <see cref="M:System.Windows.Input.ICommand.Execute(System.Object)"/> 的参数。
+            如果未设置此项，则将使用来自 <seealso cref="M:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.Execute(System.Object,System.Object)"/> 方法的参数。
+            此为可选的依赖属性。
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverter">
+            <summary>
+            获取或设置依赖于 <seealso cref="M:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.Execute(System.Object,System.Object)"/> 方法的参数来运行的转换器。
+            此为可选的依赖属性。
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverterParameter">
+            <summary>
+            获取或设置传递给 <see cref="M:Windows.UI.Xaml.Data.IValueConverter.Convert(System.Object,System.Type,System.Object,System.String)"/> 方法的参数，
+            此方法为 <see cref="P:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverter"/> 的方法。
+            此为可选的依赖属性。
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverterLanguage">
+            <summary>
+            获取或设置传递给 <see cref="M:Windows.UI.Xaml.Data.IValueConverter.Convert(System.Object,System.Type,System.Object,System.String)"/> 方法的语言，
+            此方法为 <see cref="P:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverter"/> 的方法。
+            此为可选的依赖属性。
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactions.Core.DataTriggerBehavior">
+            <summary>
+            一种行为，当绑定数据符合指定条件时将执行一系列操作。
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactions.Core.DataTriggerBehavior.ActionsProperty">
+            <summary>
+            标识 <seealso cref="P:Microsoft.Xaml.Interactions.Core.DataTriggerBehavior.Actions"/> 依赖属性。
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactions.Core.DataTriggerBehavior.BindingProperty">
+            <summary>
+            标识 <seealso cref="P:Microsoft.Xaml.Interactions.Core.DataTriggerBehavior.Binding"/> 依赖属性。
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactions.Core.DataTriggerBehavior.ComparisonConditionProperty">
+            <summary>
+            标识 <seealso cref="P:Microsoft.Xaml.Interactions.Core.DataTriggerBehavior.ComparisonCondition"/> 依赖属性。
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactions.Core.DataTriggerBehavior.ValueProperty">
+            <summary>
+            标识 <seealso cref="P:Microsoft.Xaml.Interactions.Core.DataTriggerBehavior.Value"/> 依赖属性。
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactions.Core.DataTriggerBehavior.Attach(Windows.UI.Xaml.DependencyObject)">
+            <summary>
+            附加到指定的对象。
+            </summary>
+            <param name="associatedObject"><seealso cref="T:Microsoft.Xaml.Interactivity.IBehavior"/> 要附加到的 <seealso cref="T:Windows.UI.Xaml.DependencyObject"/>。</param>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactions.Core.DataTriggerBehavior.Detach">
+            <summary>
+            将此实例与其关联的对象分离。
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactions.Core.DataTriggerBehavior.EvaluateComparable(System.IComparable,Microsoft.Xaml.Interactions.Core.ComparisonConditionType,System.IComparable)">
+            <summary>
+            计算两个实现 IComparable 接口的操作数。
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.DataTriggerBehavior.Actions">
+            <summary>
+            获取与行为关联的操作的集合。此为依赖属性。
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.DataTriggerBehavior.Binding">
+            <summary>
+            获取或设置 <see cref="T:Microsoft.Xaml.Interactions.Core.DataTriggerBehavior"/> 将侦听的绑定对象。此为依赖属性。
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.DataTriggerBehavior.ComparisonCondition">
+            <summary>
+            获取或设置要在 <see cref="P:Microsoft.Xaml.Interactions.Core.DataTriggerBehavior.Binding"/> 与 <see cref="P:Microsoft.Xaml.Interactions.Core.DataTriggerBehavior.Value"/> 之间执行的比较类型。此为依赖属性。
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.DataTriggerBehavior.Value">
+            <summary>
+            获取或设置要与 <see cref="P:Microsoft.Xaml.Interactions.Core.DataTriggerBehavior.Binding"/> 的值进行比较的值。此为依赖属性。
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.DataTriggerBehavior.AssociatedObject">
+            <summary>
+            获取 <seealso cref="T:Microsoft.Xaml.Interactivity.IBehavior"/> 附加到的 <seealso cref="T:Windows.UI.Xaml.DependencyObject"/>。
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior">
+            <summary>
+            一种行为，它侦听其源上的指定事件，并在激发该事件时执行其操作。
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.ActionsProperty">
+            <summary>
+            标识 <seealso cref="P:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.Actions"/> 依赖属性。
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.EventNameProperty">
+            <summary>
+            标识 <seealso cref="P:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.EventName"/> 依赖属性。
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.SourceObjectProperty">
+            <summary>
+            标识 <seealso cref="P:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.SourceObject"/> 依赖属性。
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.#ctor">
+            <summary>
+            初始化 <see cref="T:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior"/> 类的新实例。
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.Attach(Windows.UI.Xaml.DependencyObject)">
+            <summary>
+            附加到指定的对象。
+            </summary>
+            <param name="associatedObject"><seealso cref="T:Microsoft.Xaml.Interactivity.IBehavior"/> 要附加到的 <seealso cref="T:Windows.UI.Xaml.DependencyObject"/>。</param>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.Detach">
+            <summary>
+            将此实例与其关联的对象分离。
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.Actions">
+            <summary>
+            获取与行为关联的操作的集合。此为依赖属性。
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.EventName">
+            <summary>
+            获取或设置要侦听的事件的名称。此为依赖属性。
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.SourceObject">
+            <summary>
+            获取或设置此行为侦听其事件的源对象。
+            如果 <seealso cref="P:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.SourceObject"/> 未设置，则源默认为 <seealso cref="P:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.AssociatedObject"/>。此为依赖属性。
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.AssociatedObject">
+            <summary>
+            获取 <seealso cref="T:Microsoft.Xaml.Interactivity.IBehavior"/> 附加到的 <seealso cref="T:Windows.UI.Xaml.DependencyObject"/>。
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactions.Core.TypeConverterHelper">
+            <summary>
+            一个帮助器类，可用于将标记（字符串）中指定的值转换为其对象表示形式。
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactions.Core.TypeConverterHelper.Convert(System.String,System.String)">
+            <summary>
+            将值的字符串表示形式转换为其对象表示形式。
+            </summary>
+            <param name="value">要转换的值。</param>
+            <param name="destinationTypeFullName">目标类型的全名。</param>
+            <returns>此字符串值的对象表示形式。</returns>
+            <exception cref="T:System.ArgumentNullException">destinationTypeFullName 不能为 null。</exception>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactions.Media.ControlStoryboardAction">
+            <summary>
+            一项在执行时将更改指定 <seealso cref="T:Windows.UI.Xaml.Media.Animation.Storyboard"/> 状态的操作。
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactions.Media.ControlStoryboardAction.ControlStoryboardOptionProperty">
+            <summary>
+            标识 <seealso cref="P:Microsoft.Xaml.Interactions.Media.ControlStoryboardAction.ControlStoryboardOption"/> 依赖属性。
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactions.Media.ControlStoryboardAction.StoryboardProperty">
+            <summary>
+            标识 <seealso cref="P:Microsoft.Xaml.Interactions.Media.ControlStoryboardAction.Storyboard"/> 依赖属性。
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactions.Media.ControlStoryboardAction.Execute(System.Object,System.Object)">
+            <summary>
+            执行此操作。
+            </summary>
+            <param name="sender">由行为传递给操作的 <see cref="T:System.Object"/>。通常这是 <seealso cref="P:Microsoft.Xaml.Interactivity.IBehavior.AssociatedObject"/> 或目标对象。</param>
+            <param name="parameter">此参数的值由调用方决定。</param>
+            <returns>如果成功调用指定操作，则为 true；否则为 false。</returns>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Media.ControlStoryboardAction.ControlStoryboardOption">
+            <summary>
+            获取或设置要对 <see cref="T:Windows.UI.Xaml.Media.Animation.Storyboard"/> 执行的操作。此为依赖属性。
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Media.ControlStoryboardAction.Storyboard">
+            <summary>
+            获取或设置目标 <see cref="T:Windows.UI.Xaml.Media.Animation.Storyboard"/>。此为依赖属性。
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactions.Media.ControlStoryboardOption">
+            <summary>
+            表示可应用于 <seealso cref="T:Windows.UI.Xaml.Media.Animation.Storyboard"/> 的操作。
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactions.Media.PlaySoundAction">
+            <summary>
+            一项操作，用于播放表示完成的声音。
+            </summary>
+            <remarks>
+            此操作旨在与无需停止或控制的短暂声音效果配合使用。如果您尝试
+            创建音乐播放器或游戏，它可能无法满足您的需求。
+            </remarks>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactions.Media.PlaySoundAction.SourceProperty">
+            <summary>
+            标识 <seealso cref="P:Microsoft.Xaml.Interactions.Media.PlaySoundAction.Source"/> 依赖属性。
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactions.Media.PlaySoundAction.VolumeProperty">
+            <summary>
+            标识 <seealso cref="P:Microsoft.Xaml.Interactions.Media.PlaySoundAction.Volume"/> 依赖属性。
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactions.Media.PlaySoundAction.Execute(System.Object,System.Object)">
+            <summary>
+            执行此操作。
+            </summary>
+            <param name="sender">由行为传递给操作的 <see cref="T:System.Object"/>。通常这是 <seealso cref="P:Microsoft.Xaml.Interactivity.IBehavior.AssociatedObject"/> 或目标对象。</param>
+            <param name="parameter">此参数的值由调用方决定。</param>
+            <returns>如果 <see cref="P:Windows.UI.Xaml.Controls.MediaElement.Source"/> 设置成功，则为 true；否则为 false。</returns>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Media.PlaySoundAction.Source">
+            <summary>
+            获取或设置声音文件的位置。这用于设置 <see cref="T:Windows.UI.Xaml.Controls.MediaElement"/> 的源属性。此为依赖属性。
+            </summary>
+            <remarks>
+            声音可以是 <see cref="T:Windows.UI.Xaml.Controls.MediaElement"/> 支持的任何文件格式。对于视频，它将只播放
+            音频部分。
+            </remarks>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Media.PlaySoundAction.Volume">
+            <summary>
+            获取或设置声音的音量。这用于设置 <see cref="T:Windows.UI.Xaml.Controls.MediaElement"/> 的 <see cref="P:Windows.UI.Xaml.Controls.MediaElement.Volume"/> 属性。此为依赖属性。
+            </summary>
+            <remarks>
+            默认情况下，它设置为 0.5。
+            </remarks>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        "Microsoft.Xaml.Interactivity_Phone"
+    </assembly>
+    <members>
+        <member name="M:Microsoft.Xaml.Interactivity.VisualStateUtilities.GetVisualStateGroups(Windows.UI.Xaml.FrameworkElement)">
+            <summary>
+取得 VisualStateManager.VisualStateGroups 附加屬性的值。
+</summary>
+            <param name="element">要取得 VisualStateManager.VisualStateGroups 的 <see cref="T:Windows.UI.Xaml.FrameworkElement"/>。</param>
+            <returns>指定元素中的 VisualStateGroups 清單。</returns>
+            <exception cref="T:Platform.InvalidArgumentException">
+                <paramref name="element"/> 為 null。</exception>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.VisualStateUtilities.GoToState(Windows.UI.Xaml.Controls.Control,System.String,System.Boolean)">
+            <summary>
+使控制項在兩個狀態之間轉換。
+</summary>
+            <param name="control">要在狀態之間轉換的 <see cref="T:Windows.UI.Xaml.Controls.Control"/>。</param>
+            <param name="stateName">要轉換的狀態。</param>
+            <param name="useTransitions">True 表示使用 <see cref="T:Windows.UI.Xaml.VisualTransition"/> 在狀態之間轉換，否則為 false。</param>
+            <returns>如果成功將 <paramref name="control"/> 轉換為新的狀態則為 True，否則為 false。</returns>
+            <exception cref="T:Platform.InvalidArgumentException">
+                <paramref name="control"/> 或 <paramref name="stateName"/> 為 null。</exception>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.VisualStateUtilities.FindNearestStatefulControl(Windows.UI.Xaml.FrameworkElement)">
+            <summary>
+尋找最接近且含有視覺狀態的父代。
+</summary>
+            <param name="element">要從中尋找最接近之可設定狀態控制項的 <see cref="T:Windows.UI.Xaml.FrameworkElement"/>。</param>
+            <returns>最接近且含有視覺狀態的 <see cref="T:Windows.UI.Xaml.Controls.Control"/>，否則為 null。</returns>
+            <exception cref="T:Platform.InvalidArgumentException">
+                <paramref name="element"/> 為 null。</exception>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactivity.VisualStateUtilities">
+            <summary>
+提供各種可搭配 <seealso cref="T:Windows.UI.Xaml.VisualStateManager"/> 使用的標準作業。
+</summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.IAction.Execute(System.Object,System.Object)">
+            <summary>
+執行動作。
+</summary>
+            <param name="sender">由行為傳遞至動作的 <see cref="T:Platform.Object"/>。通常，這是 <seealso cref="P:Microsoft.Xaml.Interactivity.IBehavior.AssociatedObject"/> 或目標物件。</param>
+            <param name="parameter">這個參數的值由呼叫端決定。</param>
+            <remarks> An example of parameter usage is EventTriggerBehavior, which passes the EventArgs as a parameter to its actions.</remarks>
+            <returns>傳回動作的結果。</returns>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactivity.IAction">
+            <summary>
+所有自訂動作所實作的介面。
+</summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.Interaction.ExecuteActions(System.Object,Microsoft.Xaml.Interactivity.ActionCollection,System.Object)">
+            <summary>
+執行 <see cref="T:Microsoft.Xaml.Interactivity.ActionCollection"/> 中的所有動作並傳回其結果。
+</summary>
+            <param name="sender">將傳遞至動作的 <see cref="T:Platform.Object"/>。</param>
+            <param name="actions">要執行的動作集。</param>
+            <param name="parameter">這個參數的值由呼叫行為決定。</param>
+            <returns>傳回動作的結果。</returns>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.Interaction.SetBehaviors(Windows.UI.Xaml.DependencyObject,Microsoft.Xaml.Interactivity.BehaviorCollection)">
+            <summary>
+設定與指定之物件關聯的 <see cref="T:Microsoft.Xaml.Interactivity.BehaviorCollection"/>。
+</summary>
+            <param name="obj">要設定 <see cref="T:Microsoft.Xaml.Interactivity.BehaviorCollection"/> 的 <see cref="T:Windows.UI.Xaml.DependencyObject"/>。</param>
+            <param name="value">與物件相關聯的 <see cref="T:Microsoft.Xaml.Interactivity.BehaviorCollection"/>。</param>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.Interaction.GetBehaviors(Windows.UI.Xaml.DependencyObject)">
+            <summary>
+取得與指定之物件關聯的 <see cref="T:Microsoft.Xaml.Interactivity.BehaviorCollection"/>。
+</summary>
+            <param name="obj">要從中擷取 <see cref="T:Microsoft.Xaml.Interactivity.BehaviorCollection"/> 的 <see cref="T:Windows.UI.Xaml.DependencyObject"/>。</param>
+            <returns>包含與指定物件關聯之行為的 <see cref="T:Microsoft.Xaml.Interactivity.BehaviorCollection"/>。</returns>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactivity.Interaction.BehaviorsProperty">
+            <summary>
+取得或設定與指定之物件關聯的 <see cref="T:Microsoft.Xaml.Interactivity.BehaviorCollection"/>。
+</summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactivity.Interaction">
+            <summary>
+定義 <see cref="T:Microsoft.Xaml.Interactivity.BehaviorCollection"/> 附加屬性，並提供用於執行 <seealso cref="T:Microsoft.Xaml.Interactivity.ActionCollection"/> 的方法。
+</summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.ActionCollection.#ctor">
+            <summary>
+初始化 <see cref="T:Microsoft.Xaml.Interactivity.ActionCollection"/> 類別的新執行個體。
+</summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactivity.ActionCollection">
+            <summary>
+表示 IActions 的集合。
+</summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.BehaviorCollection.Detach">
+            <summary>
+中斷連接 <see cref="P:Microsoft.Xaml.Interactivity.BehaviorCollection.AssociatedObject"/> 中的行為集合。
+</summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.BehaviorCollection.Attach(Windows.UI.Xaml.DependencyObject)">
+            <summary>
+將行為的集合附加至指定的 <see cref="T:Windows.UI.Xaml.DependencyObject"/>。
+</summary>
+            <param name="associatedObject">要附加的 <see cref="T:Windows.UI.Xaml.DependencyObject"/>。</param>
+            <exception cref="T:Platform.FailureException">已將 <see cref="T:Microsoft.Xaml.Interactivity.BehaviorCollection"/> 附加到不同的 <see cref="T:Windows.UI.Xaml.DependencyObject"/>。</exception>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactivity.BehaviorCollection.AssociatedObject">
+            <summary>
+取得附加 <see cref="T:Microsoft.Xaml.Interactivity.BehaviorCollection"/> 的 <see cref="T:Windows.UI.Xaml.DependencyObject"/>。
+</summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.BehaviorCollection.#ctor">
+            <summary>
+初始化 <see cref="T:Microsoft.Xaml.Interactivity.BehaviorCollection"/> 類別的新執行個體。
+</summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactivity.BehaviorCollection">
+            <summary>
+表示含有共用 <see cref="P:Microsoft.Xaml.Interactivity.BehaviorCollection.AssociatedObject"/> 之 IBehaviors 的集合。
+</summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.IBehavior.Detach">
+            <summary>
+將這個執行個體從其關聯的物件卸離。
+</summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.IBehavior.Attach(Windows.UI.Xaml.DependencyObject)">
+            <summary>
+附加到指定的物件。
+</summary>
+            <param name="associatedObject">將附加 <seealso cref="T:Microsoft.Xaml.Interactivity.IBehavior"/> 的 <see cref="T:Windows.UI.Xaml.DependencyObject"/>。</param>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactivity.IBehavior.AssociatedObject">
+            <summary>
+取得附加 <seealso cref="T:Microsoft.Xaml.Interactivity.IBehavior"/> 的 <see cref="T:Windows.UI.Xaml.DependencyObject"/>。
+</summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactivity.IBehavior">
+            <summary>
+所有自訂行為所實作的介面。
+</summary>
+        </member>
+    </members>
+</doc>

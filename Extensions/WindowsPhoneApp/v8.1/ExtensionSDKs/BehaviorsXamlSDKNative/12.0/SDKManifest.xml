@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<FileList
+  DisplayName = "Behaviors SDK (XAML)"
+  AppliesTo = "WindowsAppContainer + (VisualC)"
+  MinVSVersion = "12.0"
+  MinOSVersion="6.3.1"
+  MaxOSVersionTested="6.3.1"
+  MoreInfo = "http://go.microsoft.com/fwlink/?LinkId=304127"
+  ProductFamilyName = "Microsoft.Xaml"
+  SupportsMultipleVersions = "Error"
+  SupportedArchitectures = "x86;ARM">
+  <File Reference="Microsoft.Xaml.Interactions.winmd" Implementation="Microsoft.Xaml.Interactions.dll">
+    <ToolboxItems BlendCategory="Behaviors">
+      <Item Type="Microsoft.Xaml.Interactions.Core.EventTriggerBehavior" />
+      <Item Type="Microsoft.Xaml.Interactions.Core.GoToStateAction" />
+      <Item Type="Microsoft.Xaml.Interactions.Core.NavigateToPageAction" />
+      <Item Type="Microsoft.Xaml.Interactions.Core.IncrementalUpdateBehavior" />
+      <Item Type="Microsoft.Xaml.Interactions.Core.InvokeCommandAction" />
+      <Item Type="Microsoft.Xaml.Interactions.Media.ControlStoryboardAction" />
+      <Item Type="Microsoft.Xaml.Interactions.Media.PlaySoundAction" />
+    </ToolboxItems>
+    <ToolboxItems VSCategory="Behaviors">
+      <Item Type="Microsoft.Xaml.Interactions.Core.EventTriggerBehavior" />
+      <Item Type="Microsoft.Xaml.Interactions.Core.GoToStateAction" />
+      <Item Type="Microsoft.Xaml.Interactions.Core.NavigateToPageAction" />
+      <Item Type="Microsoft.Xaml.Interactions.Core.IncrementalUpdateBehavior" />
+      <Item Type="Microsoft.Xaml.Interactions.Core.InvokeCommandAction" />
+      <Item Type="Microsoft.Xaml.Interactions.Media.ControlStoryboardAction" />
+      <Item Type="Microsoft.Xaml.Interactions.Media.PlaySoundAction" />
+    </ToolboxItems>
+  </File>
+  <File Reference="Microsoft.Xaml.Interactivity.winmd" Implementation="Microsoft.Xaml.Interactivity.dll" />
+</FileList>

@@ -1,0 +1,336 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        "Microsoft.Xaml.Interactions_Phone"
+    </assembly>
+    <members>
+        <member name="M:Microsoft.Xaml.Interactions.Core.GoToStateAction.Execute(System.Object,System.Object)">
+            <summary>
+Выполняет действие.
+</summary>
+            <param name="sender">Объект <see cref="T:Platform.Object"/>, который передается действию поведением. Как правило, это свойство <seealso cref="P:Microsoft.Xaml.Interactivity.IBehavior.AssociatedObject"/> или целевой объект.</param>
+            <param name="parameter">Значение данного параметра определяется вызывающим объектом.</param>
+            <returns>Значение true, если переход к заданному состоянию осуществлен успешно; в противном случае — значение false.</returns>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.GoToStateAction.UseTransitions">
+            <summary>
+Получает или задает значение, указывающее, нужно ли использовать тип <seealso cref="T:Windows.UI.Xaml.VisualTransition"/> для перехода между состояниями. Это свойство зависимостей.
+</summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.GoToStateAction.StateName">
+            <summary>
+Получает или задает имя объекта <seealso cref="T:Windows.UI.Xaml.VisualState"/>. Это свойство зависимостей.
+</summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.GoToStateAction.TargetObject">
+            <summary>
+Получает или задает целевой объект. Это свойство зависимостей.
+</summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.GoToStateAction.UseTransitionsProperty">
+            <summary>
+Определяет свойство зависимостей <see cref="P:Microsoft.Xaml.Interactions.Core.GoToStateAction.UseTransitions"/>.
+</summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.GoToStateAction.StateNameProperty">
+            <summary>
+Определяет свойство зависимостей <see cref="P:Microsoft.Xaml.Interactions.Core.GoToStateAction.StateName"/>.
+</summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.GoToStateAction.TargetObjectProperty">
+            <summary>
+Определяет свойство зависимостей <see cref="P:Microsoft.Xaml.Interactions.Core.GoToStateAction.TargetObject"/>.
+</summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactions.Core.GoToStateAction">
+            <summary>
+Действие, которое при выполнении переведет объект <see cref="T:Windows.UI.Xaml.FrameworkElement"/> в заданный объект <seealso cref="T:Windows.UI.Xaml.VisualState"/>.
+</summary>
+            <remarks>
+Если свойство <see cref="P:Microsoft.Xaml.Interactions.Core.GoToStateAction.TargetObject"/> задано, это действие попытается изменить состояние целевого элемента. В противном случае действие выполняет обход
+дерево элементов в попытке найти альтернативный целевой объект, определяющий состояния. Типы <see cref="T:Windows.UI.Xaml.Controls.ControlTemplate"/> и <see cref="T:Windows.UI.Xaml.Controls.UserControl"/> являются
+два общих результата.
+</remarks>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactions.Media.ControlStoryboardAction.Execute(System.Object,System.Object)">
+            <summary>
+Выполняет действие.
+</summary>
+            <param name="sender">Объект <see cref="T:Platform.Object"/>, который передается действию поведением. Как правило, это свойство <seealso cref="P:Microsoft.Xaml.Interactivity.IBehavior.AssociatedObject"/> или целевой объект.</param>
+            <param name="parameter">Значение данного параметра определяется вызывающим объектом.</param>
+            <returns>Значение true, если заданная операция вызвана успешно; в противном случае — значение false.</returns>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Media.ControlStoryboardAction.ControlStoryboardOption">
+            <summary>
+Получает или задает действие, которое требуется выполнить в типе <seealso cref="T:Windows.UI.Xaml.Media.Animation.Storyboard"/>. Это свойство зависимостей.
+</summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Media.ControlStoryboardAction.Storyboard">
+            <summary>
+Получает или задает целевой тип <seealso cref="T:Windows.UI.Xaml.Media.Animation.Storyboard"/>. Это свойство зависимостей.
+</summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Media.ControlStoryboardAction.ControlStoryboardOptionProperty">
+            <summary>
+Определяет свойство зависимостей <see cref="P:Microsoft.Xaml.Interactions.Media.ControlStoryboardAction.ControlStoryboardOption"/>.
+</summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Media.ControlStoryboardAction.StoryboardProperty">
+            <summary>
+Определяет свойство зависимостей <see cref="P:Microsoft.Xaml.Interactions.Media.ControlStoryboardAction.Storyboard"/>.
+</summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactions.Media.ControlStoryboardAction">
+            <summary>
+Действие, которое при исполнении изменит состояние заданного объекта <seealso cref="T:Windows.UI.Xaml.Media.Animation.Storyboard"/>.
+</summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactions.Media.ControlStoryboardOption">
+            <summary>
+Представляет операции, которые можно применить к объекту <seealso cref="T:Windows.UI.Xaml.Media.Animation.Storyboard"/>.
+</summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.Execute(System.Object,System.Object)">
+            <summary>
+Выполняет действие.
+</summary>
+            <param name="sender">Объект <see cref="T:Platform.Object"/>, который передается действию поведением. Как правило, это свойство <seealso cref="P:Microsoft.Xaml.Interactivity.IBehavior.AssociatedObject"/> или целевой объект.</param>
+            <param name="parameter">Значение данного параметра определяется вызывающим объектом.</param>
+            <returns>Значение true, если команда выполнена успешно; в противном случае — значение false.</returns>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverterLanguage">
+            <summary>
+Получает или задает язык, передаваемый<see cref="M:Windows.UI.Xaml.Data.IValueConverter.Convert(System.Object,Windows.UI.Xaml.Interop.TypeName,System.Object,System.String)"/>
+метод свойства <see cref="P:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverter"/>.
+Это дополнительное свойство зависимостей.
+</summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverterParameter">
+            <summary>
+Получает или задает параметр, передаваемый методу <see cref="M:Windows.UI.Xaml.Data.IValueConverter.Convert(System.Object,Windows.UI.Xaml.Interop.TypeName,System.Object,System.String)"/>
+метод свойства <see cref="P:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverter"/>.
+Это дополнительное свойство зависимостей.
+</summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverter">
+            <summary>
+Получает или задает конвертер, выполняемый в параметре из метода <see cref="M:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.Execute(System.Object,System.Object)"/>.
+Это дополнительное свойство зависимостей.
+</summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.CommandParameter">
+            <summary>
+Получает или задает параметр, передаваемый <see cref="M:Windows.UI.Xaml.Input.ICommand.Execute(System.Object)"/>.
+Если значение не задано, будет использован параметр из метода <see cref="M:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.Execute(System.Object,System.Object)"/>.
+Это дополнительное свойство зависимостей.
+</summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.Command">
+            <summary>
+Получает или задает команду, которая должна вызываться этим действием. Это свойство зависимостей.
+</summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverterLanguageProperty">
+            <summary>
+Определяет свойство зависимостей <see cref="P:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverterLanguage"/>.
+</summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverterParameterProperty">
+            <summary>
+Определяет свойство зависимостей <see cref="P:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverterParameter"/>.
+</summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverterProperty">
+            <summary>
+Определяет свойство зависимостей <see cref="P:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverter"/>.
+</summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.CommandParameterProperty">
+            <summary>
+Определяет свойство зависимостей <see cref="P:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.CommandParameter"/>.
+</summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.CommandProperty">
+            <summary>
+Определяет свойство зависимостей <see cref="P:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.Command"/>.
+</summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactions.Core.InvokeCommandAction">
+            <summary>
+При вызове выполняет заданный метод <seealso cref="T:Windows.UI.Xaml.Input.ICommand"/>.
+</summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.Detach">
+            <summary>
+Отсоединяет этот экземпляр от связанного с ним объекта.
+</summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.Attach(Windows.UI.Xaml.DependencyObject)">
+            <summary>
+Прикрепляет к заданному объекту.
+</summary>
+            <param name="associatedObject">Тип <see cref="T:Windows.UI.Xaml.DependencyObject"/>, к которому будет прикреплен тип <seealso cref="T:Microsoft.Xaml.Interactivity.IBehavior"/>.</param>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.Actions">
+            <summary>
+Получает коллекцию действий, связанных с этим поведением. Это свойство зависимостей.
+</summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.EventName">
+            <summary>
+Получает или задает имя события, которое требуется прослушивать. Это свойство зависимостей.
+</summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.SourceObject">
+            <summary>
+Получает или задает исходный объект, из которого данное поведение прослушивает события.
+Если свойство <see cref="P:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.SourceObject"/> не задано, источнику по умолчанию будет задано значение <see cref="P:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.AssociatedObject"/>. Это свойство зависимостей.
+</summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.AssociatedObject">
+            <summary>
+Получает объект <see cref="T:Windows.UI.Xaml.DependencyObject"/>, к которому прикреплен объект <seealso cref="T:Microsoft.Xaml.Interactivity.IBehavior"/>.
+</summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.ActionsProperty">
+            <summary>
+Определяет свойство зависимостей <see cref="P:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.Actions"/>.
+</summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.EventNameProperty">
+            <summary>
+Identifies the <see cref="P:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.EventName"/> dependency property.
+</summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.SourceObjectProperty">
+            <summary>
+Определяет свойство зависимостей <see cref="P:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.SourceObject"/>.
+</summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior">
+            <summary>
+Поведение, прослушивающее заданное событие в источнике и выполняющее соответствующие действия при запуске того события.
+</summary>
+            <remarks>
+Поддерживаются следующие события:
+<see cref="E:Windows.UI.Xaml.UIElement.Tapped"/><see cref="E:Windows.UI.Xaml.UIElement.PointerPressed"/><see cref="E:Windows.UI.Xaml.FrameworkElement.Loaded"/><see cref="E:Windows.UI.Xaml.FrameworkElement.DataContextChanged"/><see cref="E:Windows.UI.Xaml.Controls.Primitives.ButtonBase.Click"/><see cref="E:Windows.UI.Xaml.Controls.Primitives.ToggleButton.Checked"/><see cref="E:Windows.UI.Xaml.Controls.Primitives.ToggleButton.Unchecked"/><see cref="E:Windows.UI.Xaml.Controls.Primitives.Selector.SelectionChanged"/><see cref="E:Windows.UI.Xaml.Controls.TextBox.TextChanged"/><see cref="E:Windows.UI.Xaml.Controls.ToggleSwitch.Toggled"/><see cref="E:Windows.UI.Xaml.Controls.WebView.NavigationCompleted"/>
+Для отклика на другие события рекомендуется реализовать пользовательское поведение.
+</remarks>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactions.Media.PlaySoundAction.Execute(System.Object,System.Object)">
+            <summary>
+Выполняет действие.
+</summary>
+            <param name="sender">Объект <see cref="T:Platform.Object"/>, который передается действию поведением. Как правило, это свойство <seealso cref="P:Microsoft.Xaml.Interactivity.IBehavior.AssociatedObject"/> или целевой объект.</param>
+            <param name="parameter">Значение данного параметра определяется вызывающим объектом.</param>
+            <returns>Значение true, если свойство <see cref="P:Windows.UI.Xaml.Controls.MediaElement.Source"/> успешно задано; в противном случае — значение false.</returns>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Media.PlaySoundAction.Volume">
+            <summary>
+Получает или задает громкость звука. Используется для задания свойства <see cref="P:Windows.UI.Xaml.Controls.MediaElement.Volume"/> типа <see cref="T:Windows.UI.Xaml.Controls.MediaElement"/>. Это свойство зависимостей.
+</summary>
+            <remarks>
+По умолчанию задано значение 0,5.
+</remarks>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Media.PlaySoundAction.Source">
+            <summary>
+Получает или задает местоположение звукового файла. Используется для задания исходного свойства типа <see cref="T:Windows.UI.Xaml.Controls.MediaElement"/>. Это свойство зависимостей.
+</summary>
+            <remarks>
+Звук может быть представлен в любом файловом формате, поддерживаемом <see cref="T:Windows.UI.Xaml.Controls.MediaElement"/>. В случае видео будет воспроизводиться только
+аудиочасть.
+</remarks>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Media.PlaySoundAction.VolumeProperty">
+            <summary>
+Определяет свойство зависимостей <see cref="P:Microsoft.Xaml.Interactions.Media.PlaySoundAction.Volume"/>.
+</summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Media.PlaySoundAction.SourceProperty">
+            <summary>
+Определяет свойство зависимостей <see cref="P:Microsoft.Xaml.Interactions.Media.PlaySoundAction.Source"/>.
+</summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactions.Media.PlaySoundAction">
+            <summary>
+Действие, которое воспроизведет звук до конца.
+</summary>
+            <remarks>
+Это действие предназначено для использования с короткими звуковыми эффектами, которые не нужно останавливать или контролировать. При попытке
+создать музыкальный плеер или игру, результат может не соответствовать вашим потребностям.
+</remarks>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactions.Core.ResourceHelper.GetString(System.String,System.String)">
+            <summary>
+Таблица строк совместно используется реализациями пакетов SDK поведений в управляемом и машинном коде.
+Этот метод является краткой, принимающей только один параметр, версией метода string.Format(), в котором синтаксис {0} используется для замены.
+</summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.IncrementalUpdateBehavior.Phase">
+            <summary>
+Получает или задает относительный приоритет данного инкрементного обновления. Значения нижней фазы обрабатываются в первую очередь.
+</summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.IncrementalUpdateBehavior.PhaseProperty">
+            <summary>
+Идентифицирует свойство зависимостей <see cref="P:Microsoft.Xaml.Interactions.Core.IncrementalUpdateBehavior.Phase"/>.
+</summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactions.Core.IncrementalUpdateBehavior.Detach">
+            <summary>
+Отсоединяет этот экземпляр от связанного с ним объекта.
+</summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactions.Core.IncrementalUpdateBehavior.Attach(Windows.UI.Xaml.DependencyObject)">
+            <summary>
+Прикрепляет к заданному объекту.
+</summary>
+            <param name="associatedObject">Тип <see cref="T:Windows.UI.Xaml.DependencyObject"/>, к которому будет прикреплен тип <seealso cref="T:Microsoft.Xaml.Interactivity.IBehavior"/>.</param>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.IncrementalUpdateBehavior.AssociatedObject">
+            <summary>
+Получает объект <see cref="T:Windows.UI.Xaml.DependencyObject"/>, к которому прикреплен объект <seealso cref="T:Microsoft.Xaml.Interactivity.IBehavior"/>.
+</summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactions.Core.IncrementalUpdateBehavior">
+            <summary>
+Поведение, которое позволяет выполнять инкрементное обновление содержимого объектов <seealso cref="T:Windows.UI.Xaml.Controls.ListView"/> и <seealso cref="T:Windows.UI.Xaml.Controls.GridView"/> в целях ускорения обновления.
+Присоединяя это поведение к элементам свойства <seealso cref="P:Windows.UI.Xaml.Controls.ItemsControl.ItemTemplate"/>, используемым этими представлениями, некоторые обновления можно отложить до тех пор, пока время отрисовки не будет доступно. Все это повышает удобство работы.
+</summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactions.Core.NavigateToPageAction.Execute(System.Object,System.Object)">
+            <summary>
+Выполняет действие.
+</summary>
+            <param name="sender">Объект <see cref="T:Platform.Object"/>, который передается действию поведением. Как правило, это свойство <seealso cref="P:Microsoft.Xaml.Interactivity.IBehavior.AssociatedObject"/> или целевой объект.</param>
+            <param name="parameter">Значение данного параметра определяется вызывающим объектом.</param>
+            <returns>Значение true, если навигация к заданной странице выполнена успешно; в противном случае — значение false.</returns>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.NavigateToPageAction.TargetPage">
+            <summary>
+Получает или задает полное имя объекта <seealso cref="T:Windows.UI.Xaml.Controls.Page"/>, к которому необходимо осуществить переход. Это свойство зависимостей.
+</summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.NavigateToPageAction.Parameter">
+            <summary>
+Получает или задает параметр, который будет передан методу Windows::UI::Xaml::Controls::Frame::Navigate(Windows::UI::Xaml::Interop::TypeName, Platfrom::Object^).
+</summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.NavigateToPageAction.ParameterProperty">
+            <summary>
+Identifies the <see cref="P:Microsoft.Xaml.Interactions.Core.NavigateToPageAction.Parameter"/> dependency property.
+</summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.NavigateToPageAction.TargetPageProperty">
+            <summary>
+Идентифицирует свойство зависимостей <see cref="P:Microsoft.Xaml.Interactions.Core.NavigateToPageAction.TargetPage"/>.
+</summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactions.Core.NavigateToPageAction">
+            <summary>
+Действие, переключающее текущий визуальный элемент в заданный тип <seealso cref="T:Windows.UI.Xaml.Controls.Page"/>.
+</summary>
+        </member>
+    </members>
+</doc>

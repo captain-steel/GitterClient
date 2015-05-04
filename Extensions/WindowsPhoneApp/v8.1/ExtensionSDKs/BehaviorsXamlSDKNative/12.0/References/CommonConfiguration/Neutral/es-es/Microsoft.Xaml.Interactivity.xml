@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        "Microsoft.Xaml.Interactivity_Phone"
+    </assembly>
+    <members>
+        <member name="M:Microsoft.Xaml.Interactivity.VisualStateUtilities.GetVisualStateGroups(Windows.UI.Xaml.FrameworkElement)">
+            <summary>
+Obtiene el valor de la propiedad adjunta VisualStateManager.VisualStateGroups.
+</summary>
+            <param name="element">Objeto <see cref="T:Windows.UI.Xaml.FrameworkElement"/> del que se obtiene VisualStateManager.VisualStateGroups.</param>
+            <returns>Lista de VisualStateGroups del elemento especificado.</returns>
+            <exception cref="T:Platform.InvalidArgumentException">
+                <paramref name="element"/> es null.</exception>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.VisualStateUtilities.GoToState(Windows.UI.Xaml.Controls.Control,System.String,System.Boolean)">
+            <summary>
+Realiza la transición del control entre dos estados.
+</summary>
+            <param name="control"><see cref="T:Windows.UI.Xaml.Controls.Control"/> para realizar la transición entre estados.</param>
+            <param name="stateName">Estado al que se realiza la transición.</param>
+            <param name="useTransitions">Es true si se va a usar un objeto <see cref="T:Windows.UI.Xaml.VisualTransition"/> para realizar la transición entre estados; de lo contrario, es false.</param>
+            <returns>Es true si se realiza correctamente la transición de <paramref name="control"/> al nuevo estado; de lo contrario, es false.</returns>
+            <exception cref="T:Platform.InvalidArgumentException">
+                <paramref name="control"/> o <paramref name="stateName"/> son null.</exception>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.VisualStateUtilities.FindNearestStatefulControl(Windows.UI.Xaml.FrameworkElement)">
+            <summary>
+Busca el elemento primario más cercano que contiene estados visuales.
+</summary>
+            <param name="element">Objeto <see cref="T:Windows.UI.Xaml.FrameworkElement"/> a partir del cual se va a buscar el control con estado más cercano.</param>
+            <returns>El objeto <see cref="T:Windows.UI.Xaml.Controls.Control"/> más próximo que contiene estados visuales; de lo contrario, es null.</returns>
+            <exception cref="T:Platform.InvalidArgumentException">
+                <paramref name="element"/> es null.</exception>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactivity.VisualStateUtilities">
+            <summary>
+Proporciona diversas operaciones estándar para trabajar con <seealso cref="T:Windows.UI.Xaml.VisualStateManager"/>.
+</summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.IAction.Execute(System.Object,System.Object)">
+            <summary>
+Ejecuta la acción.
+</summary>
+            <param name="sender"><see cref="T:Platform.Object"/> que se pasa a la acción a través del comportamiento. Normalmente, se trata de <seealso cref="P:Microsoft.Xaml.Interactivity.IBehavior.AssociatedObject"/> o un objeto de destino.</param>
+            <param name="parameter">El valor de este parámetro viene determinado por el llamador.</param>
+            <remarks> Un ejemplo de uso del parámetro es EventTriggerBehavior, que pasa EventArgs como parámetro a sus acciones.</remarks>
+            <returns>Devuelve el resultado de la acción.</returns>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactivity.IAction">
+            <summary>
+Interfaz implementada por todas las acciones personalizadas.
+</summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.Interaction.ExecuteActions(System.Object,Microsoft.Xaml.Interactivity.ActionCollection,System.Object)">
+            <summary>
+Ejecuta todas las acciones de <see cref="T:Microsoft.Xaml.Interactivity.ActionCollection"/> y devuelve los resultados.
+</summary>
+            <param name="sender"><see cref="T:Platform.Object"/> que se va a pasar en la acción.</param>
+            <param name="actions">Conjunto de acciones que se van a ejecutar.</param>
+            <param name="parameter">El valor de este parámetro viene determinado por el comportamiento que realiza la llamada.</param>
+            <returns>Devuelve los resultados de las acciones.</returns>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.Interaction.SetBehaviors(Windows.UI.Xaml.DependencyObject,Microsoft.Xaml.Interactivity.BehaviorCollection)">
+            <summary>
+Establece la colección <see cref="T:Microsoft.Xaml.Interactivity.BehaviorCollection"/> asociada al objeto especificado.
+</summary>
+            <param name="obj"><see cref="T:Windows.UI.Xaml.DependencyObject"/> en el que se establece la colección <see cref="T:Microsoft.Xaml.Interactivity.BehaviorCollection"/>.</param>
+            <param name="value">Colección <see cref="T:Microsoft.Xaml.Interactivity.BehaviorCollection"/> asociada al objeto.</param>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.Interaction.GetBehaviors(Windows.UI.Xaml.DependencyObject)">
+            <summary>
+Obtiene la colección <see cref="T:Microsoft.Xaml.Interactivity.BehaviorCollection"/> asociada al objeto especificado.
+</summary>
+            <param name="obj"><see cref="T:Windows.UI.Xaml.DependencyObject"/> del que se recupera la colección <see cref="T:Microsoft.Xaml.Interactivity.BehaviorCollection"/>.</param>
+            <returns>Colección <see cref="T:Microsoft.Xaml.Interactivity.BehaviorCollection"/> que contiene los comportamientos asociados al objeto especificado.</returns>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactivity.Interaction.BehaviorsProperty">
+            <summary>
+Obtiene o establece la colección <see cref="T:Microsoft.Xaml.Interactivity.BehaviorCollection"/> asociada al objeto especificado.
+</summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactivity.Interaction">
+            <summary>
+Define la propiedad adjunta de <see cref="T:Microsoft.Xaml.Interactivity.BehaviorCollection"/> y proporciona un método para ejecutar una colección <seealso cref="T:Microsoft.Xaml.Interactivity.ActionCollection"/>.
+</summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.ActionCollection.#ctor">
+            <summary>
+Inicializa una nueva instancia de la clase <see cref="T:Microsoft.Xaml.Interactivity.ActionCollection"/>.
+</summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactivity.ActionCollection">
+            <summary>
+Representa una colección de IActions.
+</summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.BehaviorCollection.Detach">
+            <summary>
+Desasocia la colección de comportamientos de la propiedad <see cref="P:Microsoft.Xaml.Interactivity.BehaviorCollection.AssociatedObject"/>.
+</summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.BehaviorCollection.Attach(Windows.UI.Xaml.DependencyObject)">
+            <summary>
+Asocia la colección de comportamientos al objeto <see cref="T:Windows.UI.Xaml.DependencyObject"/> especificado.
+</summary>
+            <param name="associatedObject"><see cref="T:Windows.UI.Xaml.DependencyObject"/> con el que se va a realizar la asociación.</param>
+            <exception cref="T:Platform.FailureException">La colección <see cref="T:Microsoft.Xaml.Interactivity.BehaviorCollection"/> ya está asociada a otro objeto <see cref="T:Windows.UI.Xaml.DependencyObject"/>.</exception>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactivity.BehaviorCollection.AssociatedObject">
+            <summary>
+Obtiene el objeto <see cref="T:Windows.UI.Xaml.DependencyObject"/> al que se asocia <see cref="T:Microsoft.Xaml.Interactivity.BehaviorCollection"/>.
+</summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.BehaviorCollection.#ctor">
+            <summary>
+Inicializa una nueva instancia de la clase <see cref="T:Microsoft.Xaml.Interactivity.BehaviorCollection"/>.
+</summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactivity.BehaviorCollection">
+            <summary>
+Representa una colección de IBehaviors con un objeto <see cref="P:Microsoft.Xaml.Interactivity.BehaviorCollection.AssociatedObject"/> compartido.
+</summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.IBehavior.Detach">
+            <summary>
+Desasocia esta instancia de su objeto asociado.
+</summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.IBehavior.Attach(Windows.UI.Xaml.DependencyObject)">
+            <summary>
+Se adjunta al objeto especificado.
+</summary>
+            <param name="associatedObject"><see cref="T:Windows.UI.Xaml.DependencyObject"/> al que se va a asociar <seealso cref="T:Microsoft.Xaml.Interactivity.IBehavior"/>.</param>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactivity.IBehavior.AssociatedObject">
+            <summary>
+Obtiene el objeto <see cref="T:Windows.UI.Xaml.DependencyObject"/> al que se asocia <seealso cref="T:Microsoft.Xaml.Interactivity.IBehavior"/>.
+</summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactivity.IBehavior">
+            <summary>
+Interfaz implementada por todos los comportamientos personalizados.
+</summary>
+        </member>
+    </members>
+</doc>

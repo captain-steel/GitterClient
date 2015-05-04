@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        "Microsoft.Xaml.Interactivity_Phone"
+    </assembly>
+    <members>
+        <member name="M:Microsoft.Xaml.Interactivity.VisualStateUtilities.GetVisualStateGroups(Windows.UI.Xaml.FrameworkElement)">
+            <summary>
+VisualStateManager.VisualStateGroups がアタッチされたプロパティの値を取得します。
+</summary>
+            <param name="element">VisualStateManager.VisualStateGroups の取得元の <see cref="T:Windows.UI.Xaml.FrameworkElement"/>。</param>
+            <returns>指定された要素内の VisualStateGroups の一覧。</returns>
+            <exception cref="T:Platform.InvalidArgumentException">
+                <paramref name="element"/> が null です。</exception>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.VisualStateUtilities.GoToState(Windows.UI.Xaml.Controls.Control,System.String,System.Boolean)">
+            <summary>
+コントロールを 2 つの状態間で切り替えます。
+</summary>
+            <param name="control">状態を切り替える <see cref="T:Windows.UI.Xaml.Controls.Control"/>。</param>
+            <param name="stateName">切り替え先の状態。</param>
+            <param name="useTransitions"><see cref="T:Windows.UI.Xaml.VisualTransition"/> を使用して状態を切り替える場合は true、それ以外の場合は false。</param>
+            <returns><paramref name="control"/> が新しい状態に正常に切り替えられた場合は true、それ以外は false。</returns>
+            <exception cref="T:Platform.InvalidArgumentException">
+                <paramref name="control"/> または <paramref name="stateName"/>  が null です。</exception>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.VisualStateUtilities.FindNearestStatefulControl(Windows.UI.Xaml.FrameworkElement)">
+            <summary>
+表示状態を含む最も近い親を見つけます。
+</summary>
+            <param name="element">最も近いステートフル コントロールを見つける対象の <see cref="T:Windows.UI.Xaml.FrameworkElement"/>。</param>
+            <returns>表示状態が含まれる最も近い <see cref="T:Windows.UI.Xaml.Controls.Control"/>、それ以外の場合は null。</returns>
+            <exception cref="T:Platform.InvalidArgumentException">
+                <paramref name="element"/> が null です。</exception>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactivity.VisualStateUtilities">
+            <summary>
+<seealso cref="T:Windows.UI.Xaml.VisualStateManager"/> で使用できるさまざまな標準演算を提供します。
+</summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.IAction.Execute(System.Object,System.Object)">
+            <summary>
+アクションを実行します。
+</summary>
+            <param name="sender">ビヘイビアーによりアクションに渡される <see cref="T:Platform.Object"/>。通常、これは <seealso cref="P:Microsoft.Xaml.Interactivity.IBehavior.AssociatedObject"/> またはターゲット オブジェクトです。</param>
+            <param name="parameter">このパラメーターの値は呼び出し元により決定されます。</param>
+            <remarks> パラメーターの使用の例として、EventArgs をパラメーターとしてそのアクションに渡す EventTriggerBehavior があります。</remarks>
+            <returns>アクションの結果を返します。</returns>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactivity.IAction">
+            <summary>
+すべてのカスタム アクションにより実装されたインターフェイス。
+</summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.Interaction.ExecuteActions(System.Object,Microsoft.Xaml.Interactivity.ActionCollection,System.Object)">
+            <summary>
+<see cref="T:Microsoft.Xaml.Interactivity.ActionCollection"/> のすべてのアクションを実行し、その結果を返します。
+</summary>
+            <param name="sender">アクションに渡される <see cref="T:Platform.Object"/>。</param>
+            <param name="actions">実行するアクションのセット。</param>
+            <param name="parameter">このパラメーターの値は、呼び出しビヘイビアーにより決定されます。</param>
+            <returns>アクションの結果を返します。</returns>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.Interaction.SetBehaviors(Windows.UI.Xaml.DependencyObject,Microsoft.Xaml.Interactivity.BehaviorCollection)">
+            <summary>
+指定したオブジェクトに関連付けられた <see cref="T:Microsoft.Xaml.Interactivity.BehaviorCollection"/> を設定します。
+</summary>
+            <param name="obj"><see cref="T:Microsoft.Xaml.Interactivity.BehaviorCollection"/> を設定する対象の <see cref="T:Windows.UI.Xaml.DependencyObject"/>。</param>
+            <param name="value">オブジェクトに関連付けられている <see cref="T:Microsoft.Xaml.Interactivity.BehaviorCollection"/>。</param>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.Interaction.GetBehaviors(Windows.UI.Xaml.DependencyObject)">
+            <summary>
+指定したオブジェクトに関連付けられた<see cref="T:Microsoft.Xaml.Interactivity.BehaviorCollection"/>を取得します。
+</summary>
+            <param name="obj"><see cref="T:Microsoft.Xaml.Interactivity.BehaviorCollection"/> を取得する <see cref="T:Windows.UI.Xaml.DependencyObject"/>。</param>
+            <returns>指定したオブジェクトに関連付けられたビヘイビアーを含む <see cref="T:Microsoft.Xaml.Interactivity.BehaviorCollection"/>。</returns>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactivity.Interaction.BehaviorsProperty">
+            <summary>
+指定したオブジェクトに関連付けられた <see cref="T:Microsoft.Xaml.Interactivity.BehaviorCollection"/> を取得または設定します。
+</summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactivity.Interaction">
+            <summary>
+<see cref="T:Microsoft.Xaml.Interactivity.BehaviorCollection"/> アタッチ済みプロパティを定義し、<seealso cref="T:Microsoft.Xaml.Interactivity.ActionCollection"/> を実行するためのメソッドを提供します。
+</summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.ActionCollection.#ctor">
+            <summary>
+<see cref="T:Microsoft.Xaml.Interactivity.ActionCollection"/> クラスの新しいインスタンスを初期化します。
+</summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactivity.ActionCollection">
+            <summary>
+IActions のコレクションを表します。
+</summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.BehaviorCollection.Detach">
+            <summary>
+ビヘイビアーのコレクションを <see cref="P:Microsoft.Xaml.Interactivity.BehaviorCollection.AssociatedObject"/> からデタッチします。
+</summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.BehaviorCollection.Attach(Windows.UI.Xaml.DependencyObject)">
+            <summary>
+ビヘイビアーのコレクションを指定された <see cref="T:Windows.UI.Xaml.DependencyObject"/> にアタッチします。
+</summary>
+            <param name="associatedObject">アタッチする対象の <see cref="T:Windows.UI.Xaml.DependencyObject"/>。</param>
+            <exception cref="T:Platform.FailureException"><see cref="T:Microsoft.Xaml.Interactivity.BehaviorCollection"/> は既に別の <see cref="T:Windows.UI.Xaml.DependencyObject"/> にアタッチされています。</exception>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactivity.BehaviorCollection.AssociatedObject">
+            <summary>
+<see cref="T:Microsoft.Xaml.Interactivity.BehaviorCollection"/> がアタッチされる <see cref="T:Windows.UI.Xaml.DependencyObject"/> を取得します。
+</summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.BehaviorCollection.#ctor">
+            <summary>
+<see cref="T:Microsoft.Xaml.Interactivity.BehaviorCollection"/> クラスの新しいインスタンスを初期化します。
+</summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactivity.BehaviorCollection">
+            <summary>
+共有 <see cref="P:Microsoft.Xaml.Interactivity.BehaviorCollection.AssociatedObject"/> で IBehaviors のコレクションを表します。
+</summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.IBehavior.Detach">
+            <summary>
+このインスタンスを関連オブジェクトからデタッチします。
+</summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.IBehavior.Attach(Windows.UI.Xaml.DependencyObject)">
+            <summary>
+指定されたオブジェクトにアタッチします。
+</summary>
+            <param name="associatedObject"><seealso cref="T:Microsoft.Xaml.Interactivity.IBehavior"/> の適用対象の <see cref="T:Windows.UI.Xaml.DependencyObject"/></param>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactivity.IBehavior.AssociatedObject">
+            <summary>
+<seealso cref="T:Microsoft.Xaml.Interactivity.IBehavior"/> がアタッチされる <see cref="T:Windows.UI.Xaml.DependencyObject"/> を取得します。
+</summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactivity.IBehavior">
+            <summary>
+すべてのカスタム ビヘイビアーにより実装されたインターフェイス。
+</summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,229 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.Xaml.Interactivity</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.Xaml.Interactivity.ActionCollection">
+            <summary>
+            IActions의 컬렉션을 나타냅니다.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.ActionCollection.#ctor">
+            <summary>
+            <see cref="T:Microsoft.Xaml.Interactivity.ActionCollection"/> 클래스의 새 인스턴스를 초기화합니다.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactivity.BehaviorCollection">
+            <summary>
+            공유 <see cref="P:Microsoft.Xaml.Interactivity.BehaviorCollection.AssociatedObject"/>가 있는 IBehaviors의 컬렉션을 나타냅니다.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.BehaviorCollection.#ctor">
+            <summary>
+            <see cref="T:Microsoft.Xaml.Interactivity.BehaviorCollection"/> 클래스의 새 인스턴스를 초기화합니다.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.BehaviorCollection.Attach(Windows.UI.Xaml.DependencyObject)">
+            <summary>
+            동작의 컬렉션을 지정된 <see cref="T:Windows.UI.Xaml.DependencyObject"/>에 연결합니다.
+            </summary>
+            <param name="associatedObject">연결할 <see cref="T:Windows.UI.Xaml.DependencyObject"/>입니다.</param>
+            <exception cref="T:System.InvalidOperationException"><see cref="T:Microsoft.Xaml.Interactivity.BehaviorCollection"/>이 이미 다른 <see cref="T:Windows.UI.Xaml.DependencyObject"/>에 연결된 경우</exception>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.BehaviorCollection.Detach">
+            <summary>
+            <see cref="P:Microsoft.Xaml.Interactivity.BehaviorCollection.AssociatedObject"/>에서 동작의 컬렉션을 분리합니다.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactivity.BehaviorCollection.AssociatedObject">
+            <summary>
+            <see cref="T:Microsoft.Xaml.Interactivity.BehaviorCollection"/>이 연결된 <see cref="T:Windows.UI.Xaml.DependencyObject"/>를 가져옵니다.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactivity.CustomPropertyValueEditor">
+            <summary>
+            다시 사용 가능한 속성 값 편집기의 가능한 값을 열거합니다.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactivity.CustomPropertyValueEditor.Storyboard">
+            <summary>
+            지원되는 경우 스토리보드 선택기를 사용하여 디자인 시 이 속성을 편집합니다.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactivity.CustomPropertyValueEditor.StateName">
+            <summary>
+            지원되는 경우 상태 선택기를 사용하여 디자인 시 이 속성을 편집합니다.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactivity.CustomPropertyValueEditor.ElementBinding">
+            <summary>
+            지원되는 경우 요소 바인딩 선택기를 사용하여 디자인 시 이 속성을 편집합니다.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactivity.CustomPropertyValueEditor.PropertyBinding">
+            <summary>
+            지원되는 경우 속성 바인딩 선택기를 사용하여 디자인 시 이 속성을 편집합니다.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactivity.CustomPropertyValueEditorAttribute">
+            <summary>
+            <see cref="P:Microsoft.Xaml.Interactivity.CustomPropertyValueEditorAttribute.CustomPropertyValueEditor"/>가 적용되는 속성과 지정된 편집기 형식을 연결합니다.
+            </summary>
+            <remarks>이 특성을 사용하여 요소(이름별), 스토리보드 또는 상태(이름별)를 표시하는 속성에 대한 향상된 디자인 타임 편집 기능을 가져옵니다.</remarks>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.CustomPropertyValueEditorAttribute.#ctor(Microsoft.Xaml.Interactivity.CustomPropertyValueEditor)">
+            <summary>
+            <see cref="T:Microsoft.Xaml.Interactivity.CustomPropertyValueEditorAttribute"/> 클래스의 새 인스턴스를 초기화합니다.
+            </summary>
+            <param name="customPropertyValueEditor">사용자 지정 속성 값 편집기입니다.</param>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactivity.CustomPropertyValueEditorAttribute.CustomPropertyValueEditor">
+            <summary>
+            사용자 지정 속성 값 편집기를 가져옵니다.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactivity.DefaultEventAttribute">
+            <summary>
+            <see cref="T:Microsoft.Xaml.Interactivity.IAction"/>을 인스턴스화할 때 EventTriggerBehavior에 대해 설정할 EventName에 대한 디자인 도구 정보를 제공합니다.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.DefaultEventAttribute.#ctor(System.Type,System.String)">
+            <summary>
+            <see cref="T:Microsoft.Xaml.Interactivity.DefaultEventAttribute"/> 클래스의 새 인스턴스를 초기화합니다.
+            </summary>
+            <param name="targetType">이 특성이 적용되는 형식입니다.</param>
+            <param name="eventName">EventTriggerBehavior에 대한 이벤트 이름입니다.</param>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactivity.DefaultEventAttribute.TargetType">
+            <summary>
+            <see cref="T:Microsoft.Xaml.Interactivity.DefaultEventAttribute"/>가 적용되는 형식을 가져옵니다.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactivity.DefaultEventAttribute.EventName">
+            <summary>
+            EventTriggerBehavior 생성자로 전달할 이벤트 이름을 가져옵니다.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactivity.IBehavior">
+            <summary>
+            모든 사용자 지정 동작에 의해 구현된 인터페이스입니다.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.IBehavior.Attach(Windows.UI.Xaml.DependencyObject)">
+            <summary>
+            지정된 개체에 연결합니다.
+            </summary>
+            <param name="associatedObject"><seealso cref="T:Microsoft.Xaml.Interactivity.IBehavior"/>가 연결될 <see cref="T:Windows.UI.Xaml.DependencyObject"/>입니다.</param>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.IBehavior.Detach">
+            <summary>
+            연결된 개체에서 이 인스턴스를 분리합니다.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactivity.IBehavior.AssociatedObject">
+            <summary>
+            <seealso cref="T:Microsoft.Xaml.Interactivity.IBehavior"/>가 연결되는 <see cref="T:Windows.UI.Xaml.DependencyObject"/>를 가져옵니다.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactivity.IAction">
+            <summary>
+            모든 사용자 지정 작업에 의해 구현된 인터페이스입니다.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.IAction.Execute(System.Object,System.Object)">
+            <summary>
+            작업을 실행합니다.
+            </summary>
+            <param name="sender">동작에 의해 작업에 전달되는 <see cref="T:System.Object"/>입니다. 일반적으로 <seealso cref="P:Microsoft.Xaml.Interactivity.IBehavior.AssociatedObject"/> 또는 대상 개체입니다.</param>
+            <param name="parameter">이 매개 변수의 값은 호출자에 의해 결정됩니다.</param>
+            <remarks> 매개 변수 사용의 예는 EventArgs를 매개 변수로 작업에 전달하는 EventTriggerBehavior입니다.</remarks>
+            <returns>작업의 결과를 반환합니다.</returns>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactivity.Interaction">
+            <summary>
+            연결된 <see cref="T:Microsoft.Xaml.Interactivity.BehaviorCollection"/> 속성을 정의하고 <seealso cref="T:Microsoft.Xaml.Interactivity.ActionCollection"/>을 실행하기 위한 메서드를 제공합니다.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.Interaction.#ctor">
+            <remarks>
+            CA1053: 정적 소유자 형식에는 공용 생성자가 없어야 합니다.
+            </remarks>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactivity.Interaction.BehaviorsProperty">
+            <summary>
+            지정된 개체와 연결된 <see cref="T:Microsoft.Xaml.Interactivity.BehaviorCollection"/>을 가져오거나 설정합니다.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.Interaction.GetBehaviors(Windows.UI.Xaml.DependencyObject)">
+            <summary>
+            지정된 개체와 연결된 <see cref="T:Microsoft.Xaml.Interactivity.BehaviorCollection"/>을 가져옵니다.
+            </summary>
+            <param name="obj"><see cref="T:Microsoft.Xaml.Interactivity.BehaviorCollection"/>을 검색할 <see cref="T:Windows.UI.Xaml.DependencyObject"/>입니다.</param>
+            <returns>지정된 개체와 연결된 동작을 포함하는 <see cref="T:Microsoft.Xaml.Interactivity.BehaviorCollection"/>입니다.</returns>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.Interaction.SetBehaviors(Windows.UI.Xaml.DependencyObject,Microsoft.Xaml.Interactivity.BehaviorCollection)">
+            <summary>
+            지정된 개체와 연결된 <see cref="T:Microsoft.Xaml.Interactivity.BehaviorCollection"/>을 설정합니다.
+            </summary>
+            <param name="obj"><see cref="T:Microsoft.Xaml.Interactivity.BehaviorCollection"/>을 설정할 <see cref="T:Windows.UI.Xaml.DependencyObject"/>입니다.</param>
+            <param name="value">개체와 연결된 <see cref="T:Microsoft.Xaml.Interactivity.BehaviorCollection"/>입니다.</param>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.Interaction.ExecuteActions(System.Object,Microsoft.Xaml.Interactivity.ActionCollection,System.Object)">
+            <summary>
+            <see cref="T:Microsoft.Xaml.Interactivity.ActionCollection"/>의 모든 작업을 실행하고 결과를 반환합니다.
+            </summary>
+            <param name="sender">작업에 전달될 <see cref="T:System.Object"/>입니다.</param>
+            <param name="actions">실행할 작업의 집합입니다.</param>
+            <param name="parameter">이 매개 변수의 값은 호출 동작에 의해 결정됩니다.</param>
+            <returns>작업의 결과를 반환합니다.</returns>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactivity.TypeConstraintAttribute">
+            <summary>
+            <see cref="T:Microsoft.Xaml.Interactivity.IBehavior"/>의 AssociatedObject에 대한 형식 제약 조건을 지정합니다.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.TypeConstraintAttribute.#ctor(System.Type)">
+            <summary>
+            <see cref="T:Microsoft.Xaml.Interactivity.TypeConstraintAttribute"/> 클래스의 새 인스턴스를 초기화합니다.
+            </summary>
+            <param name="constraint">제약 조건 형식입니다.</param>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactivity.TypeConstraintAttribute.Constraint">
+            <summary>
+            제약 조건 형식을 가져옵니다.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactivity.VisualStateUtilities">
+            <summary>
+            <seealso cref="T:Windows.UI.Xaml.VisualStateManager"/>로 작업하기 위한 다양한 표준 작업을 제공합니다.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.VisualStateUtilities.GoToState(Windows.UI.Xaml.Controls.Control,System.String,System.Boolean)">
+            <summary>
+            두 상태 간에 컨트롤을 전환합니다.
+            </summary>
+            <param name="control">상태 간에 전환될 <see cref="T:Windows.UI.Xaml.Controls.Control"/>입니다.</param>
+            <param name="stateName">전환되는 상태입니다.</param>
+            <param name="useTransitions"><see cref="T:Windows.UI.Xaml.VisualTransition"/>을 사용하여 상태 간을 전환하려면 true이고, 그렇지 않으면 false입니다.</param>
+            <returns><paramref name="control"/>이 새로운 상태로 성공적으로 전환되면 true이고, 그렇지 않으면 false입니다.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="control"/> 또는 <paramref name="stateName"/>이 null인 경우</exception>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.VisualStateUtilities.GetVisualStateGroups(Windows.UI.Xaml.FrameworkElement)">
+            <summary>
+            연결된 VisualStateManager.VisualStateGroups 속성의 값을 가져옵니다.
+            </summary>
+            <param name="element">VisualStateManager.VisualStateGroups를 가져올 <see cref="T:Windows.UI.Xaml.FrameworkElement"/>입니다.</param>
+            <returns>지정된 요소에 있는 VisualStateGroups의 목록입니다.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="element"/> null입니다.</exception>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.VisualStateUtilities.FindNearestStatefulControl(Windows.UI.Xaml.FrameworkElement)">
+            <summary>
+            시각적 상태를 포함하는 가장 가까운 부모를 찾습니다.
+            </summary>
+            <param name="element">가장 가까운 안정된 컨트롤을 찾을 <see cref="T:Windows.UI.Xaml.FrameworkElement"/>입니다.</param>
+            <returns>시각적 상태를 포함하는 가장 가까운 <see cref="T:Windows.UI.Xaml.Controls.Control"/>입니다. 해당하는 항목이 없는 경우에는 null입니다.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="element"/> null입니다.</exception>
+        </member>
+    </members>
+</doc>

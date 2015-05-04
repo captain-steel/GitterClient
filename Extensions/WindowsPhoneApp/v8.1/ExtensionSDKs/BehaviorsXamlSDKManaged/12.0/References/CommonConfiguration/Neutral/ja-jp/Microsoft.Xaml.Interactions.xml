@@ -1,0 +1,502 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.Xaml.Interactions</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.Xaml.Interactions.Core.CallMethodAction">
+            <summary>
+            指定のオブジェクトが呼び出されると、それに対してメソッドを呼び出すアクション。
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactions.Core.CallMethodAction.Execute(System.Object,System.Object)">
+            <summary>
+            アクションを実行します。
+            </summary>
+            <param name="sender">ビヘイビアーによりアクションに渡される <see cref="T:System.Object"/>。通常、これは <seealso cref="P:Microsoft.Xaml.Interactivity.IBehavior.AssociatedObject"/> またはターゲット オブジェクトです。</param>
+            <param name="parameter">このパラメーターの値は呼び出し元により決定されます。</param>
+            <returns>メソッドが呼び出される場合は true、それ以外の場合は false。</returns>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.CallMethodAction.MethodName">
+            <summary>
+            呼び出すメソッドの名前を取得または設定します。これは依存関係プロパティです。
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.CallMethodAction.TargetObject">
+            <summary>
+            対象のメソッドを公開するオブジェクトを取得または設定します。これは依存関係プロパティです。
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactions.Core.ChangePropertyAction">
+            <summary>
+            起動されたときに、特定のプロパティを特定の値に変更するアクションです。
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactions.Core.ChangePropertyAction.PropertyNameProperty">
+            <summary>
+            <seealso cref="P:Microsoft.Xaml.Interactions.Core.ChangePropertyAction.PropertyName"/> 依存関係プロパティを識別します。
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactions.Core.ChangePropertyAction.TargetObjectProperty">
+            <summary>
+            <seealso cref="P:Microsoft.Xaml.Interactions.Core.ChangePropertyAction.TargetObject"/> 依存関係プロパティを識別します。
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactions.Core.ChangePropertyAction.ValueProperty">
+            <summary>
+            <seealso cref="P:Microsoft.Xaml.Interactions.Core.ChangePropertyAction.Value"/> 依存関係プロパティを識別します。
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactions.Core.ChangePropertyAction.Execute(System.Object,System.Object)">
+            <summary>
+            アクションを実行します。
+            </summary>
+            <param name="sender">ビヘイビアーによりアクションに渡される <see cref="T:System.Object"/>。通常、これは <seealso cref="P:Microsoft.Xaml.Interactivity.IBehavior.AssociatedObject"/> またはターゲット オブジェクトです。</param>
+            <param name="parameter">このパラメーターの値は呼び出し元により決定されます。</param>
+            <returns>プロパティ値が正常に更新された場合は true、それ以外の場合は false。</returns>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactions.Core.ChangePropertyAction.ValidateProperty(System.String,System.Reflection.PropertyInfo)">
+            <summary>
+            プロパティが null ではなく、書き込み可能であることを確認します。
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.ChangePropertyAction.PropertyName">
+            <summary>
+            変更するプロパティの名前を取得または設定します。これは依存関係プロパティです。
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.ChangePropertyAction.Value">
+            <summary>
+            設定する値を取得または設定します。これは依存関係プロパティです。
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.ChangePropertyAction.TargetObject">
+            <summary>
+            プロパティが変更されるオブジェクトを取得または設定します。
+            <seealso cref="P:Microsoft.Xaml.Interactions.Core.ChangePropertyAction.TargetObject"/> が設定されていない、または解決できない場合は、<seealso cref="M:Microsoft.Xaml.Interactions.Core.ChangePropertyAction.Execute(System.Object,System.Object)"/> の送信元が使用されます。これは依存関係プロパティです。
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactions.Core.ComparisonConditionType">
+            <summary>
+            1 つの三項条件を示します。
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactions.Core.DataBindingHelper.RefreshDataBindingsOnActions(Microsoft.Xaml.Interactivity.ActionCollection)">
+            <summary>
+            アクションのバインド式がすべて最新の状態であることを確認します。
+            </summary>
+            <remarks>
+            データ バインディング フェーズで、DataTrigger が起動されます。 ActionCollection はコレクションの子であるため、
+            アクションのバインディングは最新の状態でないことがあります。 このルーチンは、すべてのバインディングが
+            最新のデータで更新済みであることを確認するため、アクションを実行する前に呼び出されます。
+            </remarks>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactions.Core.NavigateToPageAction">
+            <summary>
+            現在の表示を指定された <see cref="T:Windows.UI.Xaml.Controls.Page"/> に切り替えるアクション。
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactions.Core.NavigateToPageAction.TargetPageProperty">
+            <summary>
+            <seealso cref="P:Microsoft.Xaml.Interactions.Core.NavigateToPageAction.TargetPage"/> 依存関係プロパティを識別します。
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactions.Core.NavigateToPageAction.ParameterProperty">
+            <summary>
+            <seealso cref="P:Microsoft.Xaml.Interactions.Core.NavigateToPageAction.Parameter"/> 依存関係プロパティを識別します。
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactions.Core.NavigateToPageAction.Execute(System.Object,System.Object)">
+            <summary>
+            アクションを実行します。
+            </summary>
+            <param name="sender">ビヘイビアーによりアクションに渡される <see cref="T:System.Object"/>。通常、これは <seealso cref="P:Microsoft.Xaml.Interactivity.IBehavior.AssociatedObject"/> またはターゲット オブジェクトです。</param>
+            <param name="parameter">このパラメーターの値は呼び出し元により決定されます。</param>
+            <returns>指定されたページへのナビゲーションが正常な場合は true、それ以外の場合は false。</returns>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.NavigateToPageAction.TargetPage">
+            <summary>
+            移動先の <see cref="T:Windows.UI.Xaml.Controls.Page"/> の完全修飾名を取得または設定します。これは依存関係プロパティです。
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.NavigateToPageAction.Parameter">
+            <summary>
+            <see cref="M:Windows.UI.Xaml.Controls.Frame.Navigate(System.Type,System.Object)"/> メソッドに渡されるパラメーターを取得または設定します。
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactions.Core.GoToStateAction">
+            <summary>
+            実行されたときに、<see cref="T:Windows.UI.Xaml.FrameworkElement"/> を指定の <seealso cref="T:Windows.UI.Xaml.VisualState"/> に移行するアクションです。
+            </summary>
+            <remarks>
+            <seealso cref="P:Microsoft.Xaml.Interactions.Core.GoToStateAction.TargetObject"/> プロパティが設定されると、このアクションはターゲット要素の状態の変更を試みます。設定されない場合、このアクションは
+            要素ツリー上で状態を定義する別のターゲットを検索します。<see cref="T:Windows.UI.Xaml.Controls.ControlTemplate"/> と <see cref="T:Windows.UI.Xaml.Controls.UserControl"/> は、
+2 つの一般的な結果です。
+            </remarks>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactions.Core.GoToStateAction.UseTransitionsProperty">
+            <summary>
+            <seealso cref="P:Microsoft.Xaml.Interactions.Core.GoToStateAction.UseTransitions"/> 依存関係プロパティを識別します。
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactions.Core.GoToStateAction.StateNameProperty">
+            <summary>
+            <seealso cref="P:Microsoft.Xaml.Interactions.Core.GoToStateAction.StateName"/> 依存関係プロパティを識別します。
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactions.Core.GoToStateAction.TargetObjectProperty">
+            <summary>
+            <seealso cref="P:Microsoft.Xaml.Interactions.Core.GoToStateAction.TargetObject"/> 依存関係プロパティを識別します。
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactions.Core.GoToStateAction.Execute(System.Object,System.Object)">
+            <summary>
+            アクションを実行します。
+            </summary>
+            <param name="sender">ビヘイビアーによりアクションに渡される <see cref="T:System.Object"/>。通常、これは <seealso cref="P:Microsoft.Xaml.Interactivity.IBehavior.AssociatedObject"/> またはターゲット オブジェクトです。</param>
+            <param name="parameter">このパラメーターの値は呼び出し元により決定されます。</param>
+            <returns>指定された状態に正常に切り替えられた場合は true、それ以外の場合は false。</returns>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.GoToStateAction.UseTransitions">
+            <summary>
+            状態を切り替える場合に <see cref="T:Windows.UI.Xaml.VisualTransition"/> を使用するかどうかを取得または設定します。これは依存関係プロパティです。
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.GoToStateAction.StateName">
+            <summary>
+            <see cref="T:Windows.UI.Xaml.VisualState"/> の名前を取得または設定します。これは依存関係プロパティです。
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.GoToStateAction.TargetObject">
+            <summary>
+            ターゲット オブジェクトを取得または設定します。これは依存関係プロパティです。
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactions.Core.IncrementalUpdateBehavior">
+            <summary>
+            より迅速な更新をサポートするため、<seealso cref="T:Windows.UI.Xaml.Controls.ListView"/> および <seealso cref="T:Windows.UI.Xaml.Controls.GridView"/> コンテンツの増分更新を可能にするビヘイビアー。
+            これらのビューで使用される <seealso cref="P:Windows.UI.Xaml.Controls.ItemsControl.ItemTemplate"/> 内の要素にこのビヘイビアーをアタッチすることにより、レンダリング時間が利用可能になるまで更新の一部を遅延させることができ、よりスムーズなエクスペリエンスが実現されます。
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactions.Core.IncrementalUpdateBehavior.PhaseProperty">
+            <summary>
+            <seealso cref="P:Microsoft.Xaml.Interactions.Core.IncrementalUpdateBehavior.Phase"/> 依存関係プロパティを識別します。
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactions.Core.IncrementalUpdateBehavior.IncrementalUpdaterProperty">
+            <summary>
+            <seealso cref="T:Microsoft.Xaml.Interactions.Core.IncrementalUpdateBehavior.IncrementalUpdater"/> 依存関係プロパティを識別します。
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactions.Core.IncrementalUpdateBehavior.Attach(Windows.UI.Xaml.DependencyObject)">
+            <summary>
+            指定されたオブジェクトにアタッチします。
+            </summary>
+            <param name="associatedObject"><seealso cref="T:Microsoft.Xaml.Interactivity.IBehavior"/> の適用対象の <seealso cref="T:Windows.UI.Xaml.DependencyObject"/></param>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactions.Core.IncrementalUpdateBehavior.Detach">
+            <summary>
+            このインスタンスを関連オブジェクトからデタッチします。
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.IncrementalUpdateBehavior.Phase">
+            <summary>
+            増分更新の相対的な優先度を取得または設定します。より低いフェーズの値が最初に処理されます。
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.IncrementalUpdateBehavior.AssociatedObject">
+            <summary>
+            <seealso cref="T:Microsoft.Xaml.Interactivity.IBehavior"/> がアタッチされる <seealso cref="T:Windows.UI.Xaml.DependencyObject"/> を取得します。
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactions.Core.InvokeCommandAction">
+            <summary>
+            呼び出されると、指定の <see cref="T:System.Windows.Input.ICommand"/> を実行します。
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.CommandProperty">
+            <summary>
+            <seealso cref="P:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.Command"/> 依存関係プロパティを識別します。
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.CommandParameterProperty">
+            <summary>
+            <seealso cref="P:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.CommandParameter"/> 依存関係プロパティを識別します。
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverterProperty">
+            <summary>
+            <seealso cref="P:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverter"/> 依存関係プロパティを識別します。
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverterParameterProperty">
+            <summary>
+            <seealso cref="P:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverterParameter"/> 依存関係プロパティを識別します。
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverterLanguageProperty">
+            <summary>
+            <seealso cref="P:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverterLanguage"/> 依存関係プロパティを識別します。
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.Execute(System.Object,System.Object)">
+            <summary>
+            アクションを実行します。
+            </summary>
+            <param name="sender">ビヘイビアーによりアクションに渡される <see cref="T:System.Object"/>。通常、これは <seealso cref="P:Microsoft.Xaml.Interactivity.IBehavior.AssociatedObject"/> またはターゲット オブジェクトです。</param>
+            <param name="parameter">このパラメーターの値は呼び出し元により決定されます。</param>
+            <returns>コマンドが正常に実行された場合は true、それ以外の場合は false。</returns>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.Command">
+            <summary>
+            このアクションが呼び出すコマンドを取得または設定します。これは依存関係プロパティです。
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.CommandParameter">
+            <summary>
+            <see cref="M:System.Windows.Input.ICommand.Execute(System.Object)"/> に渡されるパラメーターを取得または設定します。
+            設定されない場合、<seealso cref="M:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.Execute(System.Object,System.Object)"/> メソッドのパラメーターが使用されます。
+            これはオプションの依存関係プロパティです。
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverter">
+            <summary>
+            <seealso cref="M:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.Execute(System.Object,System.Object)"/> メソッドからのパラメーターで実行されるコンバーターを取得または設定します。
+            これはオプションの依存関係プロパティです。
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverterParameter">
+            <summary>
+            に渡すパラメーターを取得または設定します。<see cref="M:Windows.UI.Xaml.Data.IValueConverter.Convert(System.Object,System.Type,System.Object,System.String)"/>
+            (<see cref="P:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverter"/>) に渡される言語を取得または設定します。
+            これはオプションの依存関係プロパティです。
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverterLanguage">
+            <summary>
+            <see cref="M:Windows.UI.Xaml.Data.IValueConverter.Convert(System.Object,System.Type,System.Object,System.String)"/> メソッド
+            (<see cref="P:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverter"/>) に渡される言語を取得または設定します。
+これはオプションの依存関係プロパティです。
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactions.Core.DataTriggerBehavior">
+            <summary>
+            バインドされたデータが条件を満たすときにアクションを実行するビヘイビアー。
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactions.Core.DataTriggerBehavior.ActionsProperty">
+            <summary>
+            <seealso cref="P:Microsoft.Xaml.Interactions.Core.DataTriggerBehavior.Actions"/> 依存関係プロパティを識別します。
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactions.Core.DataTriggerBehavior.BindingProperty">
+            <summary>
+            <seealso cref="P:Microsoft.Xaml.Interactions.Core.DataTriggerBehavior.Binding"/> 依存関係プロパティを識別します。
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactions.Core.DataTriggerBehavior.ComparisonConditionProperty">
+            <summary>
+            <seealso cref="P:Microsoft.Xaml.Interactions.Core.DataTriggerBehavior.ComparisonCondition"/> 依存関係プロパティを識別します。
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactions.Core.DataTriggerBehavior.ValueProperty">
+            <summary>
+            <seealso cref="P:Microsoft.Xaml.Interactions.Core.DataTriggerBehavior.Value"/> 依存関係プロパティを識別します。
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactions.Core.DataTriggerBehavior.Attach(Windows.UI.Xaml.DependencyObject)">
+            <summary>
+            指定されたオブジェクトにアタッチします。
+            </summary>
+            <param name="associatedObject"><seealso cref="T:Microsoft.Xaml.Interactivity.IBehavior"/> の適用対象の <seealso cref="T:Windows.UI.Xaml.DependencyObject"/></param>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactions.Core.DataTriggerBehavior.Detach">
+            <summary>
+            このインスタンスを関連オブジェクトからデタッチします。
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactions.Core.DataTriggerBehavior.EvaluateComparable(System.IComparable,Microsoft.Xaml.Interactions.Core.ComparisonConditionType,System.IComparable)">
+            <summary>
+            IComparable インターフェイスを実装する両方のオペランドを評価します。
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.DataTriggerBehavior.Actions">
+            <summary>
+            ビヘイビアーに関連付けられているアクションのコレクションを取得します。これは依存関係プロパティです。
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.DataTriggerBehavior.Binding">
+            <summary>
+            <see cref="T:Microsoft.Xaml.Interactions.Core.DataTriggerBehavior"/> がリッスンするバインドされたオブジェクトを取得または設定します。これは依存関係プロパティです。
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.DataTriggerBehavior.ComparisonCondition">
+            <summary>
+            <see cref="P:Microsoft.Xaml.Interactions.Core.DataTriggerBehavior.Binding"/> と <see cref="P:Microsoft.Xaml.Interactions.Core.DataTriggerBehavior.Value"/> の間で実行する比較の種類を取得または設定します。これは依存関係プロパティです。
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.DataTriggerBehavior.Value">
+            <summary>
+            <see cref="P:Microsoft.Xaml.Interactions.Core.DataTriggerBehavior.Binding"/> の値と比較する値を取得または設定します。これは依存関係プロパティです。
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.DataTriggerBehavior.AssociatedObject">
+            <summary>
+            <seealso cref="T:Microsoft.Xaml.Interactivity.IBehavior"/> がアタッチされる <seealso cref="T:Windows.UI.Xaml.DependencyObject"/> を取得します。
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior">
+            <summary>
+            ソース上の指定イベントをリッスンし、そのイベントが発生するとアクションを実行するビヘイビアー。
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.ActionsProperty">
+            <summary>
+            <seealso cref="P:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.Actions"/> 依存関係プロパティを識別します。
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.EventNameProperty">
+            <summary>
+            <seealso cref="P:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.EventName"/> 依存関係プロパティを識別します。
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.SourceObjectProperty">
+            <summary>
+            <seealso cref="P:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.SourceObject"/> 依存関係プロパティを識別します。
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.#ctor">
+            <summary>
+            <see cref="T:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior"/> クラスの新しいインスタンスを初期化します。
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.Attach(Windows.UI.Xaml.DependencyObject)">
+            <summary>
+            指定されたオブジェクトにアタッチします。
+            </summary>
+            <param name="associatedObject"><seealso cref="T:Microsoft.Xaml.Interactivity.IBehavior"/> の適用対象の <seealso cref="T:Windows.UI.Xaml.DependencyObject"/></param>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.Detach">
+            <summary>
+            このインスタンスを関連オブジェクトからデタッチします。
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.Actions">
+            <summary>
+            ビヘイビアーに関連付けられているアクションのコレクションを取得します。これは依存関係プロパティです。
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.EventName">
+            <summary>
+            リッスンするイベントの名前を取得または設定します。これは依存関係プロパティです。
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.SourceObject">
+            <summary>
+            このビヘイビアーがイベントをリッスンするソース オブジェクトを取得または設定します。
+<seealso cref="P:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.SourceObject"/> が設定されない場合、ソースは既定で <seealso cref="P:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.AssociatedObject"/> です。これは依存関係プロパティです。
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.AssociatedObject">
+            <summary>
+            <seealso cref="T:Microsoft.Xaml.Interactivity.IBehavior"/> がアタッチされる <seealso cref="T:Windows.UI.Xaml.DependencyObject"/> を取得します。
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactions.Core.TypeConverterHelper">
+            <summary>
+            マークアップ (文字列) 内の指定された値からオブジェクト表現への変換を有効にするヘルパー クラス。
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactions.Core.TypeConverterHelper.Convert(System.String,System.String)">
+            <summary>
+            値の文字列表現をオブジェクト表現に変換します。
+            </summary>
+            <param name="value">変換対象の値。</param>
+            <param name="destinationTypeFullName">ターゲットの型の完全名。</param>
+            <returns>文字列値のオブジェクト表現。</returns>
+            <exception cref="T:System.ArgumentNullException">destinationTypeFullName を null にすることはできません。</exception>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactions.Media.ControlStoryboardAction">
+            <summary>
+            指定されたとき、指定の <seealso cref="T:Windows.UI.Xaml.Media.Animation.Storyboard"/> の状態を変更するアクション。
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactions.Media.ControlStoryboardAction.ControlStoryboardOptionProperty">
+            <summary>
+            <seealso cref="P:Microsoft.Xaml.Interactions.Media.ControlStoryboardAction.ControlStoryboardOption"/> 依存関係プロパティを識別します。
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactions.Media.ControlStoryboardAction.StoryboardProperty">
+            <summary>
+            <seealso cref="P:Microsoft.Xaml.Interactions.Media.ControlStoryboardAction.Storyboard"/> 依存関係プロパティを識別します。
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactions.Media.ControlStoryboardAction.Execute(System.Object,System.Object)">
+            <summary>
+            アクションを実行します。
+            </summary>
+            <param name="sender">ビヘイビアーによりアクションに渡される <see cref="T:System.Object"/>。通常、これは <seealso cref="P:Microsoft.Xaml.Interactivity.IBehavior.AssociatedObject"/> またはターゲット オブジェクトです。</param>
+            <param name="parameter">このパラメーターの値は呼び出し元により決定されます。</param>
+            <returns>指定された操作が正常に呼び出された場合は true、それ以外の場合は false。</returns>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Media.ControlStoryboardAction.ControlStoryboardOption">
+            <summary>
+            <see cref="T:Windows.UI.Xaml.Media.Animation.Storyboard"/> で実行するアクションを取得または設定します。これは依存関係プロパティです。
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Media.ControlStoryboardAction.Storyboard">
+            <summary>
+            ターゲットの <see cref="T:Windows.UI.Xaml.Media.Animation.Storyboard"/> を取得または設定します。これは依存関係プロパティです。
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactions.Media.ControlStoryboardOption">
+            <summary>
+            <seealso cref="T:Windows.UI.Xaml.Media.Animation.Storyboard"/> に適用できる演算を表します。
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactions.Media.PlaySoundAction">
+            <summary>
+            完了時にサウンドを鳴らすアクション。
+            </summary>
+            <remarks>
+            このアクションは、停止または制御する必要のない短いサウンド効果の利用を想定しています。音楽プレーヤやゲームを
+作成する場合には役に立たないかもしれません。
+            </remarks>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactions.Media.PlaySoundAction.SourceProperty">
+            <summary>
+            <seealso cref="P:Microsoft.Xaml.Interactions.Media.PlaySoundAction.Source"/> 依存関係プロパティを識別します。
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactions.Media.PlaySoundAction.VolumeProperty">
+            <summary>
+            <seealso cref="P:Microsoft.Xaml.Interactions.Media.PlaySoundAction.Volume"/> 依存関係プロパティを識別します。
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactions.Media.PlaySoundAction.Execute(System.Object,System.Object)">
+            <summary>
+            アクションを実行します。
+            </summary>
+            <param name="sender">ビヘイビアーによりアクションに渡される <see cref="T:System.Object"/>。通常、これは <seealso cref="P:Microsoft.Xaml.Interactivity.IBehavior.AssociatedObject"/> またはターゲット オブジェクトです。</param>
+            <param name="parameter">このパラメーターの値は呼び出し元により決定されます。</param>
+            <returns><see cref="P:Windows.UI.Xaml.Controls.MediaElement.Source"/> が正常に設定された場合は true、それ以外の場合は false。</returns>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Media.PlaySoundAction.Source">
+            <summary>
+            サウンド ファイルの場所を取得または設定します。これは、<see cref="T:Windows.UI.Xaml.Controls.MediaElement"/> のソース プロパティの設定に使用します。これは依存関係プロパティです。
+            </summary>
+            <remarks>
+            サウンドのファイル形式は、<see cref="T:Windows.UI.Xaml.Controls.MediaElement"/> でサポートされていればどれでも使用できます。動画の場合には、オーディオのみが再生されます。
+            
+            </remarks>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Media.PlaySoundAction.Volume">
+            <summary>
+            サウンドの音量を取得または設定します。これは、<see cref="T:Windows.UI.Xaml.Controls.MediaElement"/> の <see cref="P:Windows.UI.Xaml.Controls.MediaElement.Volume"/> プロパティの設定に使用します。これは依存関係プロパティです。
+            </summary>
+            <remarks>
+            既定では、これは 0.5 に設定されています。
+            </remarks>
+        </member>
+    </members>
+</doc>

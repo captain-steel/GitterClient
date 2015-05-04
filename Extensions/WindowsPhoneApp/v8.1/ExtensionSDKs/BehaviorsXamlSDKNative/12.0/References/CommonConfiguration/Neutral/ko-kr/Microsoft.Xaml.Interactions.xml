@@ -1,0 +1,336 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        "Microsoft.Xaml.Interactions_Phone"
+    </assembly>
+    <members>
+        <member name="M:Microsoft.Xaml.Interactions.Core.GoToStateAction.Execute(System.Object,System.Object)">
+            <summary>
+작업을 실행합니다.
+</summary>
+            <param name="sender">동작에 의해 작업에 전달되는 <see cref="T:Platform.Object"/>입니다. Generally this is <seealso cref="P:Microsoft.Xaml.Interactivity.IBehavior.AssociatedObject"/> or a target object.</param>
+            <param name="parameter">이 매개 변수의 값은 호출자에 의해 결정됩니다.</param>
+            <returns>지정된 상태로의 전환이 성공하면 true이고, 그렇지 않으면 false입니다.</returns>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.GoToStateAction.UseTransitions">
+            <summary>
+상태 간 전환에 <seealso cref="T:Windows.UI.Xaml.VisualTransition"/>을 사용할지 여부를 가져오거나 설정합니다. 이 속성은 종속성 속성입니다.
+</summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.GoToStateAction.StateName">
+            <summary>
+<seealso cref="T:Windows.UI.Xaml.VisualState"/>의 이름을 가져오거나 설정합니다. 이 속성은 종속성 속성입니다.
+</summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.GoToStateAction.TargetObject">
+            <summary>
+대상 개체를 가져오거나 설정합니다. 이 속성은 종속성 속성입니다.
+</summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.GoToStateAction.UseTransitionsProperty">
+            <summary>
+<see cref="P:Microsoft.Xaml.Interactions.Core.GoToStateAction.UseTransitions"/> 종속성 속성을 식별합니다.
+</summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.GoToStateAction.StateNameProperty">
+            <summary>
+<see cref="P:Microsoft.Xaml.Interactions.Core.GoToStateAction.StateName"/> 종속성 속성을 식별합니다.
+</summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.GoToStateAction.TargetObjectProperty">
+            <summary>
+<see cref="P:Microsoft.Xaml.Interactions.Core.GoToStateAction.TargetObject"/> 종속성 속성을 식별합니다.
+</summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactions.Core.GoToStateAction">
+            <summary>
+실행될 때 <see cref="T:Windows.UI.Xaml.FrameworkElement"/>를 지정된 <seealso cref="T:Windows.UI.Xaml.VisualState"/>로 전환할 작업입니다.
+</summary>
+            <remarks>
+<see cref="P:Microsoft.Xaml.Interactions.Core.GoToStateAction.TargetObject"/> 속성이 설정되어 있으면 이 작업은 대상 요소의 상태를 변경하려고 시도하고, 그렇지 않으면 이 작업은
+요소 트리를 살펴보고 상태를 정의하는 다른 대상을 찾습니다. <see cref="T:Windows.UI.Xaml.Controls.ControlTemplate"/> 및 <see cref="T:Windows.UI.Xaml.Controls.UserControl"/>은
+두 가지 일반적인 결과입니다.
+</remarks>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactions.Media.ControlStoryboardAction.Execute(System.Object,System.Object)">
+            <summary>
+작업을 실행합니다.
+</summary>
+            <param name="sender">동작에 의해 작업에 전달되는 <see cref="T:Platform.Object"/>입니다. Generally this is <seealso cref="P:Microsoft.Xaml.Interactivity.IBehavior.AssociatedObject"/> or a target object.</param>
+            <param name="parameter">이 매개 변수의 값은 호출자에 의해 결정됩니다.</param>
+            <returns>지정된 작업이 성공적으로 호출되면 true이고, 그렇지 않으면 false입니다.</returns>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Media.ControlStoryboardAction.ControlStoryboardOption">
+            <summary>
+<seealso cref="T:Windows.UI.Xaml.Media.Animation.Storyboard"/>에 대해 실행할 작업을 가져오거나 설정합니다. 이 속성은 종속성 속성입니다.
+</summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Media.ControlStoryboardAction.Storyboard">
+            <summary>
+대상 <seealso cref="T:Windows.UI.Xaml.Media.Animation.Storyboard"/>를 가져오거나 설정합니다. 이 속성은 종속성 속성입니다.
+</summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Media.ControlStoryboardAction.ControlStoryboardOptionProperty">
+            <summary>
+<see cref="P:Microsoft.Xaml.Interactions.Media.ControlStoryboardAction.ControlStoryboardOption"/> 종속성 속성을 식별합니다.
+</summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Media.ControlStoryboardAction.StoryboardProperty">
+            <summary>
+<see cref="P:Microsoft.Xaml.Interactions.Media.ControlStoryboardAction.Storyboard"/> 종속성 속성을 식별합니다.
+</summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactions.Media.ControlStoryboardAction">
+            <summary>
+실행될 때 지정된 <seealso cref="T:Windows.UI.Xaml.Media.Animation.Storyboard"/>의 상태를 변경할 작업입니다.
+</summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactions.Media.ControlStoryboardOption">
+            <summary>
+<seealso cref="T:Windows.UI.Xaml.Media.Animation.Storyboard"/>에 적용될 수 있는 작업을 나타냅니다.
+</summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.Execute(System.Object,System.Object)">
+            <summary>
+작업을 실행합니다.
+</summary>
+            <param name="sender">동작에 의해 작업에 전달되는 <see cref="T:Platform.Object"/>입니다. Generally this is <seealso cref="P:Microsoft.Xaml.Interactivity.IBehavior.AssociatedObject"/> or a target object.</param>
+            <param name="parameter">이 매개 변수의 값은 호출자에 의해 결정됩니다.</param>
+            <returns>명령이 성공적으로 실행되면 true이고, 그렇지 않으면 false입니다.</returns>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverterLanguage">
+            <summary>
+<see cref="P:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverter"/>의 <see cref="M:Windows.UI.Xaml.Data.IValueConverter.Convert(System.Object,Windows.UI.Xaml.Interop.TypeName,System.Object,System.String)"/> 메서드에 전달되는 언어를
+가져오거나 설정합니다.
+이 속성은 선택적 종속성 속성입니다.
+</summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverterParameter">
+            <summary>
+에 전달되는 매개 변수를 가져오거나 설정합니다.<see cref="M:Windows.UI.Xaml.Data.IValueConverter.Convert(System.Object,Windows.UI.Xaml.Interop.TypeName,System.Object,System.String)"/>
+method of <see cref="P:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverter"/>.
+이 속성은 선택적 종속성 속성입니다.
+</summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverter">
+            <summary>
+<see cref="M:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.Execute(System.Object,System.Object)"/> 메서드의 매개 변수에 대해 실행되는 변환기를 가져오거나 설정합니다.
+이 속성은 선택적 종속성 속성입니다.
+</summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.CommandParameter">
+            <summary>
+<see cref="M:Windows.UI.Xaml.Input.ICommand.Execute(System.Object)"/>에 전달되는 매개 변수를 가져오거나 설정합니다.
+이 속성이 설정되어 있지 않으면 <see cref="M:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.Execute(System.Object,System.Object)"/> 메서드의 매개 변수가 사용됩니다.
+이 속성은 선택적 종속성 속성입니다.
+</summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.Command">
+            <summary>
+이 작업이 호출해야 할 명령을 가져오거나 설정합니다. 이 속성은 종속성 속성입니다.
+</summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverterLanguageProperty">
+            <summary>
+<see cref="P:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverterLanguage"/> 종속성 속성을 식별합니다.
+</summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverterParameterProperty">
+            <summary>
+<see cref="P:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverterParameter"/> 종속성 속성을 식별합니다.
+</summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverterProperty">
+            <summary>
+<see cref="P:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverter"/> 종속성 속성을 식별합니다.
+</summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.CommandParameterProperty">
+            <summary>
+<see cref="P:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.CommandParameter"/> 종속성 속성을 식별합니다.
+</summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.CommandProperty">
+            <summary>
+<see cref="P:Microsoft.Xaml.Interactions.Core.InvokeCommandAction.Command"/> 종속성 속성을 식별합니다.
+</summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactions.Core.InvokeCommandAction">
+            <summary>
+호출될 때 지정된 <seealso cref="T:Windows.UI.Xaml.Input.ICommand"/>를 실행합니다.
+</summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.Detach">
+            <summary>
+연결된 개체에서 이 인스턴스를 분리합니다.
+</summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.Attach(Windows.UI.Xaml.DependencyObject)">
+            <summary>
+지정된 개체에 연결합니다.
+</summary>
+            <param name="associatedObject"><seealso cref="T:Microsoft.Xaml.Interactivity.IBehavior"/>가 연결될 <see cref="T:Windows.UI.Xaml.DependencyObject"/>입니다.</param>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.Actions">
+            <summary>
+동작과 연결된 작업의 컬렉션을 가져옵니다. 이 속성은 종속성 속성입니다.
+</summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.EventName">
+            <summary>
+수신 대기할 이벤트 이름을 가져오거나 설정합니다. 이 속성은 종속성 속성입니다.
+</summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.SourceObject">
+            <summary>
+이 동작이 이벤트를 수신 대기하는 원본 개체를 가져오거나 설정합니다.
+<see cref="P:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.SourceObject"/>가 설정되어 있지 않으면 원본은 기본적으로 <see cref="P:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.AssociatedObject"/>로 설정됩니다. 이 속성은 종속성 속성입니다.
+</summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.AssociatedObject">
+            <summary>
+<seealso cref="T:Microsoft.Xaml.Interactivity.IBehavior"/>가 연결된 <see cref="T:Windows.UI.Xaml.DependencyObject"/>를 가져옵니다.
+</summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.ActionsProperty">
+            <summary>
+<see cref="P:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.Actions"/> 종속성 속성을 식별합니다.
+</summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.EventNameProperty">
+            <summary>
+Identifies the <see cref="P:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.EventName"/> dependency property.
+</summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.SourceObjectProperty">
+            <summary>
+<see cref="P:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.SourceObject"/> 종속성 속성을 식별합니다.
+</summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactions.Core.EventTriggerBehavior">
+            <summary>
+원본에서 지정된 이벤트를 수신 대기하고 해당 이벤트가 발생할 때 작업을 실행하는 동작입니다.
+</summary>
+            <remarks>
+다음 이벤트가 지원됩니다.
+<see cref="E:Windows.UI.Xaml.UIElement.Tapped"/><see cref="E:Windows.UI.Xaml.UIElement.PointerPressed"/><see cref="E:Windows.UI.Xaml.FrameworkElement.Loaded"/><see cref="E:Windows.UI.Xaml.FrameworkElement.DataContextChanged"/><see cref="E:Windows.UI.Xaml.Controls.Primitives.ButtonBase.Click"/><see cref="E:Windows.UI.Xaml.Controls.Primitives.ToggleButton.Checked"/><see cref="E:Windows.UI.Xaml.Controls.Primitives.ToggleButton.Unchecked"/><see cref="E:Windows.UI.Xaml.Controls.Primitives.Selector.SelectionChanged"/><see cref="E:Windows.UI.Xaml.Controls.TextBox.TextChanged"/><see cref="E:Windows.UI.Xaml.Controls.ToggleSwitch.Toggled"/><see cref="E:Windows.UI.Xaml.Controls.WebView.NavigationCompleted"/>
+다른 이벤트에 응답하도록 사용자 지정 동작을 구현해 보십시오.
+</remarks>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactions.Media.PlaySoundAction.Execute(System.Object,System.Object)">
+            <summary>
+작업을 실행합니다.
+</summary>
+            <param name="sender">동작에 의해 작업에 전달되는 <see cref="T:Platform.Object"/>입니다. Generally this is <seealso cref="P:Microsoft.Xaml.Interactivity.IBehavior.AssociatedObject"/> or a target object.</param>
+            <param name="parameter">이 매개 변수의 값은 호출자에 의해 결정됩니다.</param>
+            <returns><see cref="P:Windows.UI.Xaml.Controls.MediaElement.Source"/>가 성공적으로 설정되면 true이고, 그렇지 않으면 false입니다.</returns>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Media.PlaySoundAction.Volume">
+            <summary>
+소리의 볼륨을 가져오거나 설정합니다. This is used to set the <see cref="P:Windows.UI.Xaml.Controls.MediaElement.Volume"/> property of the <see cref="T:Windows.UI.Xaml.Controls.MediaElement"/>. 이 속성은 종속성 속성입니다.
+</summary>
+            <remarks>
+기본적으로 0.5로 설정됩니다.
+</remarks>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Media.PlaySoundAction.Source">
+            <summary>
+사운드 파일의 위치를 가져오거나 설정합니다. This is used to set the source property of a <see cref="T:Windows.UI.Xaml.Controls.MediaElement"/>. 이 속성은 종속성 속성입니다.
+</summary>
+            <remarks>
+소리는 <see cref="T:Windows.UI.Xaml.Controls.MediaElement"/>에서 지원하는 모든 파일 형식이 될 수 있습니다. In the case of a video, it will play only the
+재생됩니다.
+</remarks>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Media.PlaySoundAction.VolumeProperty">
+            <summary>
+<see cref="P:Microsoft.Xaml.Interactions.Media.PlaySoundAction.Volume"/> 종속성 속성을 식별합니다.
+</summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Media.PlaySoundAction.SourceProperty">
+            <summary>
+<see cref="P:Microsoft.Xaml.Interactions.Media.PlaySoundAction.Source"/> 종속성 속성을 식별합니다.
+</summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactions.Media.PlaySoundAction">
+            <summary>
+완료 시 소리를 재생할 작업입니다.
+</summary>
+            <remarks>
+이 작업은 중지하거나 제어할 필요가 없는 짧은 소리 효과와 함께 사용하기 위한 것입니다. 음악 플레이어 
+또는 게임을 만들려는 경우 요구 사항을 충족하지 못할 수 있습니다.
+</remarks>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactions.Core.ResourceHelper.GetString(System.String,System.String)">
+            <summary>
+문자열 테이블은 Behaviors SDK의 관리되는 구현과 네이티브 구현 간에 공유됩니다.
+이 메서드는 대체를 위해 {0} 구문을 사용하는 string.Format()의 빠르고 유일한 단일 매개 변수 버전입니다.
+</summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.IncrementalUpdateBehavior.Phase">
+            <summary>
+이 증분 업데이트의 상대 우선 순위를 가져오거나 설정합니다. 하위 단계 값이 먼저 처리됩니다.
+</summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.IncrementalUpdateBehavior.PhaseProperty">
+            <summary>
+<see cref="P:Microsoft.Xaml.Interactions.Core.IncrementalUpdateBehavior.Phase"/> 종속성 속성을 식별합니다.
+</summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactions.Core.IncrementalUpdateBehavior.Detach">
+            <summary>
+연결된 개체에서 이 인스턴스를 분리합니다.
+</summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactions.Core.IncrementalUpdateBehavior.Attach(Windows.UI.Xaml.DependencyObject)">
+            <summary>
+지정된 개체에 연결합니다.
+</summary>
+            <param name="associatedObject"><seealso cref="T:Microsoft.Xaml.Interactivity.IBehavior"/>가 연결될 <see cref="T:Windows.UI.Xaml.DependencyObject"/>입니다.</param>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.IncrementalUpdateBehavior.AssociatedObject">
+            <summary>
+<seealso cref="T:Microsoft.Xaml.Interactivity.IBehavior"/>가 연결된 <see cref="T:Windows.UI.Xaml.DependencyObject"/>를 가져옵니다.
+</summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactions.Core.IncrementalUpdateBehavior">
+            <summary>
+보다 빠른 업데이트를 지원하기 위해 <seealso cref="T:Windows.UI.Xaml.Controls.ListView"/> and <seealso cref="T:Windows.UI.Xaml.Controls.GridView"/> 내용의 증분 업데이트를 허용하는 동작입니다.
+이 동작을 이러한 뷰에서 사용되는 <seealso cref="P:Windows.UI.Xaml.Controls.ItemsControl.ItemTemplate"/>의 요소에 연결함으로써 일부 업데이트가 렌더링 시간을 사용할 수 있을 때까지 지연될 수 있으므로 보다 부드럽게 표시됩니다.
+</summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactions.Core.NavigateToPageAction.Execute(System.Object,System.Object)">
+            <summary>
+작업을 실행합니다.
+</summary>
+            <param name="sender">동작에 의해 작업에 전달되는 <see cref="T:Platform.Object"/>입니다. Generally this is <seealso cref="P:Microsoft.Xaml.Interactivity.IBehavior.AssociatedObject"/> or a target object.</param>
+            <param name="parameter">이 매개 변수의 값은 호출자에 의해 결정됩니다.</param>
+            <returns>지정된 페이지로의 이동이 성공적이면 true이고, 그렇지 않으면 false입니다.</returns>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.NavigateToPageAction.TargetPage">
+            <summary>
+이동할 <seealso cref="T:Windows.UI.Xaml.Controls.Page"/>의 정규화된 이름을 가져오거나 설정합니다. 이 속성은 종속성 속성입니다.
+</summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.NavigateToPageAction.Parameter">
+            <summary>
+Windows::UI::Xaml::Controls::Frame::Navigate(Windows::UI::Xaml::Interop::TypeName, Platfrom::Object^) 메서드에 전달될 매개 변수를 가져오거나 설정합니다.
+</summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.NavigateToPageAction.ParameterProperty">
+            <summary>
+Identifies the <see cref="P:Microsoft.Xaml.Interactions.Core.NavigateToPageAction.Parameter"/> dependency property.
+</summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactions.Core.NavigateToPageAction.TargetPageProperty">
+            <summary>
+<see cref="P:Microsoft.Xaml.Interactions.Core.NavigateToPageAction.TargetPage"/> 종속성 속성을 식별합니다.
+</summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactions.Core.NavigateToPageAction">
+            <summary>
+현재 비주얼을 지정된 <seealso cref="T:Windows.UI.Xaml.Controls.Page"/>로 전환하는 작업입니다.
+</summary>
+        </member>
+    </members>
+</doc>

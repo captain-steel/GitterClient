@@ -1,0 +1,229 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.Xaml.Interactivity</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.Xaml.Interactivity.ActionCollection">
+            <summary>
+            Stellt eine Auflistung von IActions dar.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.ActionCollection.#ctor">
+            <summary>
+            Initialisiert eine neue Instanz der <see cref="T:Microsoft.Xaml.Interactivity.ActionCollection"/>-Klasse.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactivity.BehaviorCollection">
+            <summary>
+            Stellt eine Auflistung der IBehaviors mit einem freigegebenen <see cref="P:Microsoft.Xaml.Interactivity.BehaviorCollection.AssociatedObject"/> dar.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.BehaviorCollection.#ctor">
+            <summary>
+            Initialisiert eine neue Instanz der <see cref="T:Microsoft.Xaml.Interactivity.BehaviorCollection"/>-Klasse.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.BehaviorCollection.Attach(Windows.UI.Xaml.DependencyObject)">
+            <summary>
+            Fügt die Auflistung der Verhaltensweisen dem angegebenen <see cref="T:Windows.UI.Xaml.DependencyObject"/> hinzu.
+            </summary>
+            <param name="associatedObject">Das <see cref="T:Windows.UI.Xaml.DependencyObject"/>, dem Objekte hinzugefügt werden sollen.</param>
+            <exception cref="T:System.InvalidOperationException">Die <see cref="T:Microsoft.Xaml.Interactivity.BehaviorCollection"/> ist bereits einem anderen <see cref="T:Windows.UI.Xaml.DependencyObject"/> angefügt.</exception>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.BehaviorCollection.Detach">
+            <summary>
+            Trennt die Auflistung der Verhaltensweisen vom <see cref="P:Microsoft.Xaml.Interactivity.BehaviorCollection.AssociatedObject"/>.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactivity.BehaviorCollection.AssociatedObject">
+            <summary>
+            Ruft das <see cref="T:Windows.UI.Xaml.DependencyObject"/> ab, dem <see cref="T:Microsoft.Xaml.Interactivity.BehaviorCollection"/> angefügt wurde.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactivity.CustomPropertyValueEditor">
+            <summary>
+            Listet mögliche Werte für wiederverwendbare Eigenschaftswert-Editoren auf.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactivity.CustomPropertyValueEditor.Storyboard">
+            <summary>
+            Verwendet die Storyboardauswahl (falls diese unterstützt wird), um diese Eigenschaft in der Designphase zu bearbeiten.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactivity.CustomPropertyValueEditor.StateName">
+            <summary>
+            Verwendet die Zustandsauswahl (falls diese unterstützt wird), um diese Eigenschaft in der Designphase zu bearbeiten.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactivity.CustomPropertyValueEditor.ElementBinding">
+            <summary>
+            Verwendet die Elementbindungsauswahl (falls diese unterstützt wird), um diese Eigenschaft in der Designphase zu bearbeiten.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactivity.CustomPropertyValueEditor.PropertyBinding">
+            <summary>
+            Verwendet die Eigenschaftsbindungsauswahl (falls diese unterstützt wird), um diese Eigenschaft in der Designphase zu bearbeiten.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactivity.CustomPropertyValueEditorAttribute">
+            <summary>
+            Ordnet den angegebenen Editortyp der Eigenschaft zu, auf die der <see cref="P:Microsoft.Xaml.Interactivity.CustomPropertyValueEditorAttribute.CustomPropertyValueEditor"/> angewendet wird.
+            </summary>
+            <remarks>Verwenden Sie dieses Attribut, um die Bearbeitung von Eigenschaften, die Element (über den Namen), Storyboards oder Zustände (über den Namen) kennzeichnen, in der Designphase zu verbessern.</remarks>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.CustomPropertyValueEditorAttribute.#ctor(Microsoft.Xaml.Interactivity.CustomPropertyValueEditor)">
+            <summary>
+            Initialisiert eine neue Instanz der <see cref="T:Microsoft.Xaml.Interactivity.CustomPropertyValueEditorAttribute"/>-Klasse.
+            </summary>
+            <param name="customPropertyValueEditor">Der Editor für benutzerdefinierte Eigenschaftswerte.</param>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactivity.CustomPropertyValueEditorAttribute.CustomPropertyValueEditor">
+            <summary>
+            Ruft den Editor für benutzerdefinierte Eigenschaftswerte ab.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactivity.DefaultEventAttribute">
+            <summary>
+            Stellt Informationen für Designtools bereit, welcher EventName für EventTriggerBehavior festgelegt werden muss, wenn eine <see cref="T:Microsoft.Xaml.Interactivity.IAction"/> instanziiert wird.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.DefaultEventAttribute.#ctor(System.Type,System.String)">
+            <summary>
+            Initialisiert eine neue Instanz der <see cref="T:Microsoft.Xaml.Interactivity.DefaultEventAttribute"/>-Klasse.
+            </summary>
+            <param name="targetType">Der Typ, auf den dieses Attribut angewendet wird.</param>
+            <param name="eventName">Der Ereignisname für EventTriggerBehavior.</param>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactivity.DefaultEventAttribute.TargetType">
+            <summary>
+            Ruft den Typ ab, auf den <see cref="T:Microsoft.Xaml.Interactivity.DefaultEventAttribute"/> angewendet wird.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactivity.DefaultEventAttribute.EventName">
+            <summary>
+            Ruft den Ereignisnamen ab, der an den EventTriggerBehavior-Konstruktor weitergeleitet werden soll.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactivity.IBehavior">
+            <summary>
+            Schnittstelle, die von allen benutzerdefinierten Verhaltensweisen implementiert wird.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.IBehavior.Attach(Windows.UI.Xaml.DependencyObject)">
+            <summary>
+            Wird an das angegebene Objekt angefügt.
+            </summary>
+            <param name="associatedObject">Das <see cref="T:Windows.UI.Xaml.DependencyObject"/>, dem das <seealso cref="T:Microsoft.Xaml.Interactivity.IBehavior"/> angefügt wird.</param>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.IBehavior.Detach">
+            <summary>
+            Trennt diese Instanz von dem zugeordneten Objekt.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactivity.IBehavior.AssociatedObject">
+            <summary>
+            Ruft das <see cref="T:Windows.UI.Xaml.DependencyObject"/> ab, dem <seealso cref="T:Microsoft.Xaml.Interactivity.IBehavior"/> angefügt wurde.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactivity.IAction">
+            <summary>
+            Schnittstelle, die von allen benutzerdefinierten Aktionen implementiert wird.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.IAction.Execute(System.Object,System.Object)">
+            <summary>
+            Führt die Aktion aus.
+            </summary>
+            <param name="sender">Das <see cref="T:System.Object"/>, das vom Verhalten an die Aktion weitergeleitet wird. Normalerweise ist dies <seealso cref="P:Microsoft.Xaml.Interactivity.IBehavior.AssociatedObject"/> oder ein Zielobjekt.</param>
+            <param name="parameter">Der Wert dieses Parameters wird vom Aufrufenden festgelegt.</param>
+            <remarks> Ein Beispiel der Parameternutzung ist EventTriggerBehavior, das EventArgs als Parameter an die Aktionen weiterleitet.</remarks>
+            <returns>Gibt das Ergebnis der Aktion zurück.</returns>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactivity.Interaction">
+            <summary>
+            Definiert eine angefügte <see cref="T:Microsoft.Xaml.Interactivity.BehaviorCollection"/>-Eigenschaft und bietet eine Methode zum Ausführen einer <seealso cref="T:Microsoft.Xaml.Interactivity.ActionCollection"/>.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.Interaction.#ctor">
+            <remarks>
+            CA1053: Statische Besitzertypen dürfen keine öffentlichen Konstruktoren aufweisen.
+            </remarks>
+        </member>
+        <member name="F:Microsoft.Xaml.Interactivity.Interaction.BehaviorsProperty">
+            <summary>
+            Ruft die <see cref="T:Microsoft.Xaml.Interactivity.BehaviorCollection"/> ab, die dem angegebenen Objekt zugeordnet ist, oder legt diese fest.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.Interaction.GetBehaviors(Windows.UI.Xaml.DependencyObject)">
+            <summary>
+            Ruft die <see cref="T:Microsoft.Xaml.Interactivity.BehaviorCollection"/> ab, die dem angegebenen Objekt zugeordnet ist.
+            </summary>
+            <param name="obj">Das <see cref="T:Windows.UI.Xaml.DependencyObject"/>, von dem die <see cref="T:Microsoft.Xaml.Interactivity.BehaviorCollection"/> abgerufen wird.</param>
+            <returns>Eine <see cref="T:Microsoft.Xaml.Interactivity.BehaviorCollection"/>, die die Verhaltensweisen enthält, die dem angegebenen Objekt zugeordnet sind.</returns>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.Interaction.SetBehaviors(Windows.UI.Xaml.DependencyObject,Microsoft.Xaml.Interactivity.BehaviorCollection)">
+            <summary>
+            Legt die <see cref="T:Microsoft.Xaml.Interactivity.BehaviorCollection"/> fest, die dem angegebenen Objekt zugeordnet ist.
+            </summary>
+            <param name="obj">Das <see cref="T:Windows.UI.Xaml.DependencyObject"/>, für das <see cref="T:Microsoft.Xaml.Interactivity.BehaviorCollection"/> festgelegt werden soll.</param>
+            <param name="value">Die dem Objekt zugeordnete <see cref="T:Microsoft.Xaml.Interactivity.BehaviorCollection"/>.</param>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.Interaction.ExecuteActions(System.Object,Microsoft.Xaml.Interactivity.ActionCollection,System.Object)">
+            <summary>
+            Führt alle Aktionen in der <see cref="T:Microsoft.Xaml.Interactivity.ActionCollection"/> aus und gibt ihre Ergebnisse zurück.
+            </summary>
+            <param name="sender">Das <see cref="T:System.Object"/>, das an die Aktion weitergeleitet wird.</param>
+            <param name="actions">Der Satz der Aktionen, die ausgeführt werden sollen.</param>
+            <param name="parameter">Der Wert dieses Parameters wird vom Aufrufverhalten festgelegt.</param>
+            <returns>Gibt die Ergebnisse der Aktionen zurück.</returns>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactivity.TypeConstraintAttribute">
+            <summary>
+            Legt die Typeinschränkungen am AssociatedObject von <see cref="T:Microsoft.Xaml.Interactivity.IBehavior"/> fest.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.TypeConstraintAttribute.#ctor(System.Type)">
+            <summary>
+            Initialisiert eine neue Instanz der <see cref="T:Microsoft.Xaml.Interactivity.TypeConstraintAttribute"/>-Klasse.
+            </summary>
+            <param name="constraint">Der Einschränkungstyp.</param>
+        </member>
+        <member name="P:Microsoft.Xaml.Interactivity.TypeConstraintAttribute.Constraint">
+            <summary>
+            Ruft den Einschränkungstyp ab.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xaml.Interactivity.VisualStateUtilities">
+            <summary>
+            Stellt verschiedene Standardvorgänge für die Arbeit mit <seealso cref="T:Windows.UI.Xaml.VisualStateManager"/> bereit.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.VisualStateUtilities.GoToState(Windows.UI.Xaml.Controls.Control,System.String,System.Boolean)">
+            <summary>
+            Führt Übergänge des Steuerelements von einem Zustand in einen anderen durch.
+            </summary>
+            <param name="control">Das <see cref="T:Windows.UI.Xaml.Controls.Control"/>, für das der Übergang von einem Zustand in einen anderen durchgeführt wird.</param>
+            <param name="stateName">Der Zustand, in den übergegangen wird.</param>
+            <param name="useTransitions">"True", um für den Übergang zwischen Zuständen <see cref="T:Windows.UI.Xaml.VisualTransition"/> zu verwenden, andernfalls "false".</param>
+            <returns>"True", wenn der Übergang von <paramref name="control"/> in den neuen Zustand erfolgreich durchgeführt wurde; andernfalls "false".</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="control"/> oder <paramref name="stateName"/> ist NULL.</exception>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.VisualStateUtilities.GetVisualStateGroups(Windows.UI.Xaml.FrameworkElement)">
+            <summary>
+            Ruft den Wert der an VisualStateManager.VisualStateGroups angefügten Eigenschaft ab.
+            </summary>
+            <param name="element">Das <see cref="T:Windows.UI.Xaml.FrameworkElement"/>, aus dem die VisualStateManager.VisualStateGroups abgerufen wird.</param>
+            <returns>Die Liste der VisualStateGroups im angegebenen Element.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="element"/> ist NULL.</exception>
+        </member>
+        <member name="M:Microsoft.Xaml.Interactivity.VisualStateUtilities.FindNearestStatefulControl(Windows.UI.Xaml.FrameworkElement)">
+            <summary>
+            Es wird nach dem nächsten übergeordneten Element gesucht, das visuelle Zustände enthält.
+            </summary>
+            <param name="element">Das <see cref="T:Windows.UI.Xaml.FrameworkElement"/>, bei dem das nächste zustandsbehaftete Steuerelement gefunden wird.</param>
+            <returns>Das nächste <see cref="T:Windows.UI.Xaml.Controls.Control"/>, das visuelle Status enthält, andernfalls NULL.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="element"/> ist NULL.</exception>
+        </member>
+    </members>
+</doc>
