@@ -8,8 +8,10 @@
     /// <summary>
     /// The isolated storage.
     /// </summary>
-    public class IsolatedStorage
+    public static class IsolatedStorage
     {
+        private const string TokenFile = "Token.txt";
+
         /// <summary>
         /// The save token.
         /// </summary>
@@ -27,7 +29,7 @@
             StorageFolder local = ApplicationData.Current.LocalFolder;
 
             // Create a new file named DataFile.txt.
-            var file = await local.CreateFileAsync("Token.txt", CreationCollisionOption.ReplaceExisting);
+            var file = await local.CreateFileAsync(TokenFile, CreationCollisionOption.ReplaceExisting);
 
             // Write the data from the textbox.
             using (var stream = await file.OpenStreamForWriteAsync())
@@ -48,13 +50,13 @@
 
             // Get the local folder.
             StorageFolder local = ApplicationData.Current.LocalFolder;
-
+            
             if (local != null)
             {
                 try
                 {
                     // Get the file.
-                    var file = await local.OpenStreamForReadAsync("Token.txt");
+                    var file = await local.OpenStreamForReadAsync(TokenFile);
 
                     // Read the data.
                     using (var streamReader = new StreamReader(file))

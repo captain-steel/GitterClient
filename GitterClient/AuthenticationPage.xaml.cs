@@ -7,8 +7,8 @@
     using System.Net.Http.Headers;
     using System.Threading.Tasks;
 
-    using GitterClient.Common;
-    using GitterClient.Helpers;
+    using Common;
+    using Helpers;
 
     using Windows.ApplicationModel.Activation;
     using Windows.Data.Json;

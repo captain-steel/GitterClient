@@ -62,6 +62,18 @@ namespace GitterClient.Api
             return (IObservable<IReadOnlyList<User>>) methodImpls["GetRoomUsers"](Client, arguments);
         }
 
+        public virtual Task<Message> SendMessage(string roomId,string text,string accessToken)
+        {
+            var arguments = new object[] { roomId,text,accessToken };
+            return (Task<Message>) methodImpls["SendMessage"](Client, arguments);
+        }
+
+        public virtual Task<Message> UpdateMessage(string roomId,string chatMessageId,string text,string accessToken)
+        {
+            var arguments = new object[] { roomId,chatMessageId,text,accessToken };
+            return (Task<Message>) methodImpls["UpdateMessage"](Client, arguments);
+        }
+
     }
 }
 

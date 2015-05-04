@@ -1,8 +1,16 @@
 ﻿namespace GitterClient.ViewModel
 {
+    using System.Reactive.Linq;
+
     using GalaSoft.MvvmLight;
     using GalaSoft.MvvmLight.Messaging;
     using GalaSoft.MvvmLight.Views;
+
+    using GitterClient.Api;
+    using GitterClient.Common;
+    using GitterClient.Helpers;
+
+    using Refit;
 
     /// <summary>
     /// The room view model.
@@ -53,7 +61,23 @@
                     room =>
                     {
                         Room = room;
+                        GetMessages(Room);
                     });
+        }
+
+        #endregion
+
+        #region Methods
+
+        /// <summary>
+        /// Gets the messages.
+        /// </summary>
+        /// <param name="room">The room.</param>
+        private async void GetMessages(Room room)
+        {
+            var client = RestService.For<IGitterApi>(Constants.GitterApi);
+
+            var messages = await client.GetMessages(room.id, await IsolatedStorage.GetToken());
         }
 
         #endregion
