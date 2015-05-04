@@ -50,28 +50,16 @@ namespace GitterClient.Api
             return (Task<ObservableCollection<Room>>) methodImpls["GetRooms"](Client, arguments);
         }
 
-        public virtual IObservable<IReadOnlyList<Message>> GetMessages(string roomId,string accessToken)
+        public virtual Task<ObservableCollection<Message>> GetMessages(string roomId,string accessToken)
         {
             var arguments = new object[] { roomId,accessToken };
-            return (IObservable<IReadOnlyList<Message>>) methodImpls["GetMessages"](Client, arguments);
+            return (Task<ObservableCollection<Message>>) methodImpls["GetMessages"](Client, arguments);
         }
 
-        public virtual IObservable<IReadOnlyList<User>> GetRoomUsers(string roomId,string accessToken)
+        public virtual Task<ObservableCollection<User>> GetRoomUsers(string roomId,string accessToken)
         {
             var arguments = new object[] { roomId,accessToken };
-            return (IObservable<IReadOnlyList<User>>) methodImpls["GetRoomUsers"](Client, arguments);
-        }
-
-        public virtual Task<Message> SendMessage(string roomId,string text,string accessToken)
-        {
-            var arguments = new object[] { roomId,text,accessToken };
-            return (Task<Message>) methodImpls["SendMessage"](Client, arguments);
-        }
-
-        public virtual Task<Message> UpdateMessage(string roomId,string chatMessageId,string text,string accessToken)
-        {
-            var arguments = new object[] { roomId,chatMessageId,text,accessToken };
-            return (Task<Message>) methodImpls["UpdateMessage"](Client, arguments);
+            return (Task<ObservableCollection<User>>) methodImpls["GetRoomUsers"](Client, arguments);
         }
 
     }
