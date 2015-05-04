@@ -6,8 +6,6 @@ before_install:
   - sudo apt-get install -y gtk-sharp2
   - mozroots --import --sync
   - export EnableNuGetPackageRestore=true
-install:
-  - nuget restore GitterClient.sln
 script:
   - xbuild /p:Configuration=Release GitterClient.sln
 notifications:
