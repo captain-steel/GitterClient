@@ -8,9 +8,6 @@ before_install:
   - export EnableNuGetPackageRestore=true
 script:
   - xbuild /p:Configuration=Release GitterClient.sln
-notifications:
-  email:
-    - wassim.azirar@gmail.com
 env:
   global:
     - EnableNuGetPackageRestore=true
