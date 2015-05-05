@@ -1,8 +1,9 @@
 ﻿namespace GitterClient.ViewModel
 {
-    using System.Reactive.Linq;
+    using System.Collections.ObjectModel;
 
     using GalaSoft.MvvmLight;
+    using GalaSoft.MvvmLight.Command;
     using GalaSoft.MvvmLight.Messaging;
     using GalaSoft.MvvmLight.Views;
 
@@ -29,9 +30,36 @@
         #region Properties
 
         /// <summary>
+        /// The message.
+        /// </summary>
+        private string _message;
+
+        /// <summary>
         /// The _room.
         /// </summary>
         private Room _room;
+
+        /// <summary>
+        /// The messages list.
+        /// </summary>
+        private ObservableCollection<Message> _messagesList;
+
+        /// <summary>
+        /// Gets or sets the message.
+        /// </summary>
+        public string Message
+        {
+            get
+            {
+                return _message;
+            }
+            
+            set
+            {
+                _message = value;
+                this.RaisePropertyChanged("Message");
+            }
+        }
 
         /// <summary>
         /// Gets or sets the room.
@@ -40,6 +68,15 @@
         {
             get { return _room; }
             set { Set(() => Room, ref _room, value); }
+        }
+
+        /// <summary>
+        /// Gets or sets the messages list.
+        /// </summary>
+        public ObservableCollection<Message> MessagesList
+        {
+            get { return _messagesList; }
+            set { Set(() => MessagesList, ref _messagesList, value); }
         }
 
         #endregion
@@ -54,6 +91,25 @@
         /// </param>
         public RoomViewModel(INavigationService navigationService)
         {
+            if (IsInDesignMode)
+            {
+                MessagesList = new ObservableCollection<Message>
+                                   {
+                                       new Message
+                                           {
+                                               fromUser = new User { displayName = "Wassim"},
+                                               text = "hello world"
+                                           },
+
+                                        new Message
+                                           {
+                                               fromUser = new User { displayName = "AZIRAR"},
+                                               text = "hello everybody"
+                                           },
+                                   };
+                return;
+            }
+
             _navigationService = navigationService;
 
             Messenger.Default.Register<Room>(
@@ -63,6 +119,32 @@
                         Room = room;
                         GetMessages(Room);
                     });
+        }
+
+        #endregion
+
+        #region RelayCommand
+
+        /// <summary>
+        /// The send message command.
+        /// </summary>
+        private RelayCommand _sendMessageCommand;
+
+        /// <summary>
+        /// Gets the send message command.
+        /// </summary>
+        public RelayCommand SendMessageCommand
+        {
+            get { return _sendMessageCommand ?? (_sendMessageCommand = new RelayCommand(SendMessageCommandExecute)); }
+        }
+
+        /// <summary>
+        /// The send message command execute.
+        /// </summary>
+        private async void SendMessageCommandExecute()
+        {
+            var client = RestService.For<IGitterApi>(Constants.GitterApi);
+            await client.SendMessage(Room.id, Message, await IsolatedStorage.GetToken());
         }
 
         #endregion
@@ -77,7 +159,7 @@
         {
             var client = RestService.For<IGitterApi>(Constants.GitterApi);
 
-            var messages = await client.GetMessages(room.id, await IsolatedStorage.GetToken());
+            MessagesList = await client.GetMessages(room.id, await IsolatedStorage.GetToken());
         }
 
         #endregion
