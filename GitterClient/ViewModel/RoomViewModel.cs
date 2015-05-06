@@ -1,6 +1,15 @@
 ﻿namespace GitterClient.ViewModel
 {
+    using System;
     using System.Collections.ObjectModel;
+    using System.Diagnostics;
+    using System.IO;
+    using System.Net;
+    using System.Net.Http;
+    using System.Net.Http.Headers;
+    using System.Text;
+    using System.Threading;
+    using System.Threading.Tasks;
 
     using GalaSoft.MvvmLight;
     using GalaSoft.MvvmLight.Command;
@@ -10,6 +19,8 @@
     using GitterClient.Api;
     using GitterClient.Common;
     using GitterClient.Helpers;
+
+    using Newtonsoft.Json;
 
     using Refit;
 
@@ -144,7 +155,8 @@
         private async void SendMessageCommandExecute()
         {
             var client = RestService.For<IGitterApi>(Constants.GitterApi);
-            await client.SendMessage(Room.id, Message, await IsolatedStorage.GetToken());
+
+            await client.SendMessage(Room.id, new SendMessage(Message), await IsolatedStorage.GetToken());
         }
 
         #endregion

@@ -3,6 +3,7 @@ using System.Net.Http;
 using System.Collections.Generic;
 using System.Linq;
 using System.Collections.ObjectModel;
+using System.Reactive;
 using System.Threading.Tasks;
 using Refit;
 
@@ -62,10 +63,16 @@ namespace GitterClient.Api
             return (Task<ObservableCollection<User>>) methodImpls["GetRoomUsers"](Client, arguments);
         }
 
-        public virtual Task<Message> SendMessage(string roomId,string text,string accessToken)
+        public virtual Task<Unit> SendMessage(string roomId,SendMessage message,string accessToken)
         {
-            var arguments = new object[] { roomId,text,accessToken };
-            return (Task<Message>) methodImpls["SendMessage"](Client, arguments);
+            var arguments = new object[] { roomId,message,accessToken };
+            return (Task<Unit>) methodImpls["SendMessage"](Client, arguments);
+        }
+
+        public virtual Task<Unit> UpdateMessage(string roomId,string chatMessageId,string text,string accessToken)
+        {
+            var arguments = new object[] { roomId,chatMessageId,text,accessToken };
+            return (Task<Unit>) methodImpls["UpdateMessage"](Client, arguments);
         }
 
     }

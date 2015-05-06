@@ -13,7 +13,7 @@
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
-                <RowDefinition Height="40" />
+                <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
             <ListBox Grid.Row="0" 
                      ItemsSource="{Binding MessagesList}">
@@ -50,16 +50,22 @@
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
-            <Grid Grid.Row="1">
+            <Grid Grid.Row="1"
+                  Background="Transparent"
+                  Margin="5">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="80" />
+                    <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
                 <TextBox Grid.Column="0" 
+                         VerticalAlignment="Center"
+                         Margin="5"
                          Text="{Binding Message, Mode=TwoWay}"
                          gitterClient:BindingUtility.UpdateSourceOnChange="True"/>
                 
-                <Button Grid.Column="1" 
+                <Button Grid.Column="1"
+                        VerticalAlignment="Center"
+                        Margin="5"
                         Content="Send" 
                         Command="{Binding SendMessageCommand}" />
             </Grid>

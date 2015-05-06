@@ -1,7 +1,9 @@
 ﻿namespace GitterClient.Api
 {
     using System.Collections.ObjectModel;
+    using System.Reactive;
     using System.Threading.Tasks;
+
     using Refit;
 
     /// <summary>
@@ -28,7 +30,7 @@
         /// <returns>
         /// The <see cref="Task" />.
         /// </returns>
-        [Get("/rooms/{id}/chatMessages")]
+        [Get("/rooms/{id}/chatMessages?limit=20")]
         Task<ObservableCollection<Message>> GetMessages([AliasAs("id")] string roomId, [Header("Authorization")] string accessToken);
 
         /// <summary>
@@ -46,15 +48,15 @@
         /// The send message.
         /// </summary>
         /// <param name="roomId">The room id.</param>
-        /// <param name="text">The text.</param>
+        /// <param name="message">The message.</param>
         /// <param name="accessToken">The access token.</param>
         /// <returns>
         /// The <see cref="Task" />.
         /// </returns>
         [Post("/rooms/{id}/chatMessages")]
-        Task<Message> SendMessage([AliasAs("id")] string roomId, [Body] string text, [Header("Authorization")] string accessToken);
+        Task<Unit> SendMessage([AliasAs("id")] string roomId, [Body] SendMessage message, [Header("Authorization")] string accessToken);
 
-        /*/// <summary>
+        /// <summary>
         /// The update message.
         /// </summary>
         /// <param name="roomId">The room id.</param>
@@ -65,6 +67,6 @@
         /// The <see cref="Task" />.
         /// </returns>
         [Put("/rooms/{roomId}/chatMessages/{chatMessageId}")]
-        Task<Message> UpdateMessage([AliasAs("roomId")] string roomId, [AliasAs("chatMessageId")] string chatMessageId, [Body] string text, [Header("Authorization")] string accessToken);*/
+        Task<Unit> UpdateMessage([AliasAs("roomId")] string roomId, [AliasAs("chatMessageId")] string chatMessageId, [Body] string text, [Header("Authorization")] string accessToken);
     }
 }
