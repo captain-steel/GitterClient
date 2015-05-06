@@ -6,6 +6,8 @@ Travis CI [![TravisCI](https://travis-ci.org/wassim-azirar/GitterClient.svg)](ht
 
 Backlog [![Stories in Ready](https://badge.waffle.io/wassim-azirar/GitterClient.png?label=ready&title=Ready)](https://waffle.io/wassim-azirar/GitterClient)
 
+<img src="https://raw.githubusercontent.com/wassim-azirar/GitterClient/master/Screenshots/RoomMessages.png" width="183" height="326"/>
+
 This project is using :
 - Windows Phone 8.1 (Store Apps)
 - [ Web Authentication Broker](https://msdn.microsoft.com/en-us/library/windows/apps/windows.security.authentication.web.webauthenticationbroker.aspx)
@@ -22,8 +24,8 @@ This project is using :
 - Getting the list of rooms
 - Diplaying the rooms list
 - Store the Token in the IsolatedStorage
+- Created a UI to view the messages
+- Send a message inside a room
 
 **TODO**
-- Create a UI to view the message
-- Send a message inside a room
-- Disconnect
+- Disconnect user & revoke permissions
