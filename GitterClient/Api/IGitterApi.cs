@@ -30,8 +30,8 @@
         /// <returns>
         /// The <see cref="Task" />.
         /// </returns>
-        [Get("/rooms/{id}/chatMessages?limit=20")]
-        Task<ObservableCollection<Message>> GetMessages([AliasAs("id")] string roomId, [Header("Authorization")] string accessToken);
+        [Get("/rooms/{roomId}/chatMessages")]
+        Task<ObservableCollection<Message>> GetMessages(string roomId, [Header("Authorization")] string accessToken, int limit = 20);
 
         /// <summary>
         /// The get room users.
@@ -41,8 +41,8 @@
         /// <returns>
         /// The <see cref="Task" />.
         /// </returns>
-        [Get("/rooms/{id}/users")]
-        Task<ObservableCollection<User>> GetRoomUsers([AliasAs("id")] string roomId, [Header("Authorization")] string accessToken);
+        [Get("/rooms/{roomId}/users")]
+        Task<ObservableCollection<User>> GetRoomUsers(string roomId, [Header("Authorization")] string accessToken);
 
         /// <summary>
         /// The send message.
@@ -53,8 +53,8 @@
         /// <returns>
         /// The <see cref="Task" />.
         /// </returns>
-        [Post("/rooms/{id}/chatMessages")]
-        Task<Unit> SendMessage([AliasAs("id")] string roomId, [Body] SendMessage message, [Header("Authorization")] string accessToken);
+        [Post("/rooms/{roomId}/chatMessages")]
+        Task<Unit> SendMessage(string roomId, [Body] SendMessage message, [Header("Authorization")] string accessToken);
 
         /// <summary>
         /// The update message.
@@ -67,6 +67,6 @@
         /// The <see cref="Task" />.
         /// </returns>
         [Put("/rooms/{roomId}/chatMessages/{chatMessageId}")]
-        Task<Unit> UpdateMessage([AliasAs("roomId")] string roomId, [AliasAs("chatMessageId")] string chatMessageId, [Body] string text, [Header("Authorization")] string accessToken);
+        Task<Unit> UpdateMessage(string roomId, string chatMessageId, [Body] string text, [Header("Authorization")] string accessToken);
     }
 }
