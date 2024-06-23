@@ -4,10 +4,6 @@ AppVeyor [![AppVeyor](https://ci.appveyor.com/api/projects/status/lqdbjqjel62wfn
 
 Travis CI [![TravisCI](https://travis-ci.org/wassim-azirar/GitterClient.svg)](https://travis-ci.org/wassim-azirar/GitterClient)
 
-Backlog [![Stories in Ready](https://badge.waffle.io/wassim-azirar/GitterClient.png?label=ready&title=Ready)](https://waffle.io/wassim-azirar/GitterClient)
-
-<img src="https://raw.githubusercontent.com/wassim-azirar/GitterClient/master/Screenshots/RoomMessages.png" width="183" height="326"/>
-
 This project is using :
 - Windows Phone 8.1 (Store Apps)
 - [ Web Authentication Broker](https://msdn.microsoft.com/en-us/library/windows/apps/windows.security.authentication.web.webauthenticationbroker.aspx)
