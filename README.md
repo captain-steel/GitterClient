@@ -1,8 +1,8 @@
-# GitterClient | [![Join the chat at https://gitter.im/wassim-azirar/GitterClient](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/wassim-azirar/GitterClient?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+# GitterClient | [![Join the chat at https://gitter.im/captain-steel/GitterClient](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/captain-steel/GitterClient?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-AppVeyor [![AppVeyor](https://ci.appveyor.com/api/projects/status/lqdbjqjel62wfncg?svg=true)](https://ci.appveyor.com/project/wassim-azirar/gitterclient)
+AppVeyor [![AppVeyor](https://ci.appveyor.com/api/projects/status/lqdbjqjel62wfncg?svg=true)](https://ci.appveyor.com/project/captain-steel/gitterclient)
 
-Travis CI [![TravisCI](https://travis-ci.org/wassim-azirar/GitterClient.svg)](https://travis-ci.org/wassim-azirar/GitterClient)
+Travis CI [![TravisCI](https://travis-ci.org/captain-steel/GitterClient.svg)](https://travis-ci.org/captain-steel/GitterClient)
 
 This project is using :
 - Windows Phone 8.1 (Store Apps)
