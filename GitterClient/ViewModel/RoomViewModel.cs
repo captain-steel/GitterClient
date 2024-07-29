@@ -108,13 +108,13 @@
                                    {
                                        new Message
                                            {
-                                               fromUser = new User { displayName = "Wassim"},
+                                               fromUser = new User { displayName = "Captain"},
                                                text = "hello world"
                                            },
 
                                         new Message
                                            {
-                                               fromUser = new User { displayName = "AZIRAR"},
+                                               fromUser = new User { displayName = "Steel"},
                                                text = "hello everybody"
                                            },
                                    };
